@@ -6,7 +6,7 @@ Congratulations on making it through to the penultimate stage of our recruitment
 
 We'd like to get an idea of how you work, left to your own devices, and so I have a task for you. Please read the specification carefully - there's nothing intended to trip you up or catch you by surprise. If you need clarification about any of it, then please drop an email to dave@feeld.co and I'll be happy to help.
 
-This recruitment task differs slightly from our normal process, in that since mentorship is part of the position, that same mentorship is available during the task. You won't lose (or gain) anything in your assessment by asking questions, so while I ask that you don't seek technical help unless you do need it, don't be afraid to ask. The support available will be limited to the more technical aspects of the task - I're trying to evaluate your work and skillset after all - but feel free to ask, and if it's something too basic, I'll say so and you won't be penalised. Send any requests to dave@feeld.co and I'll get back to you as soon as I can.
+This recruitment task differs slightly from our normal process, in that since mentorship is part of the position, that same mentorship is available during the task. You won't lose (or gain) anything in your assessment by asking questions, so while I ask that you don't seek technical help unless you do need it, don't be afraid to ask. The support available will be limited to the more technical aspects of the task - I'm trying to evaluate your work and skillset after all - but feel free to ask, and if it's something too basic, I'll say so and you won't be penalised. Send any requests to dave@feeld.co and I'll get back to you as soon as I can.
 
 ## Task: Solution Evaluation
 
