@@ -1,5 +1,5 @@
 # Junior infrastructure task
-## Author: Martin Infante
+*Author: Martin Infante*
 
 In this report I will evaluate several monitoring services based on various criterias and will
 recommend one of them to be deployed on the system.
