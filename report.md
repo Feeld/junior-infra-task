@@ -101,3 +101,22 @@ Pricing is based on the ammount of data ingested by the system.
 ### Disadvantages:
 
 * Further analysis on pricing should be performed.
+
+## Google Cloud Stackdriver
+
+Google Clouds's operations suite (formerly Stackdriver) helps the user monitor, troubleshoot,
+and improve application performance running on the Google Cloud environment. It can get data
+from the Google Kubernetes Engine and can also be configured for monitoring some third party
+applications. Nevertheless MongoDB, Postgres and RabbitMQ plugins are deprecated and migration
+to BlueMedora is advised.
+Kubernetes metrics with standart resolution are free of charge.
+
+### Advantages:
+
+* Direct integration with Google Kubernetes Engine.
+* Pricing advantages.
+
+### Disadvantages:
+
+* Plugins for some of the components of the application are deprecated.
+* Relying on all the services from one provider can make migration really hard.
