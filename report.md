@@ -120,3 +120,18 @@ Kubernetes metrics with standart resolution are free of charge.
 
 * Plugins for some of the components of the application are deprecated.
 * Relying on all the services from one provider can make migration really hard.
+
+## OpsGenie
+
+OpsGenie is a modern incident management platform for operating always-on services. OpsGenie can
+be integrated with Google Stackdriver acting as a dispatcher for alerts. It can also be
+integrated with many other monitoring tools.
+Pricing depends on the type of plan selected and the ammount of users to notify.
+
+### Advantages:
+
+* Easy integration with many monitoring tools.
+
+### Disadvantages:
+
+* Provides less capabilities than the other options.
