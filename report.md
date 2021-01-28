@@ -65,4 +65,21 @@ third party templates.
 * Rely on third party applications for Kubernetes and MongoDB monitorization.
 
 
+## Prometheus
 
+Prometheus is a systems and service monitoring system. The system can run on a High availability
+configuration with multiple replicas. It collects metrics from configured targets at given
+intervals, evaluates rule expressions, displays the results and can trigger alarms.
+It can be easily integrated with Google Cloud Platform and can be configured to monitor
+Kubernetes clusters.
+Postgres, Redis, MongoDB, and RabbitMQ can also be monitored with third party exporters.
+
+### Advantages:
+
+* Easy integration with GCP.
+* Kubernetes Monitorization.
+* High availabilty.
+
+### Disadvantages:
+
+* Rely on third party exportes for the rest of the services involved.
