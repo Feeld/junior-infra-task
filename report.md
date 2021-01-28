@@ -135,3 +135,31 @@ Pricing depends on the type of plan selected and the ammount of users to notify.
 ### Disadvantages:
 
 * Provides less capabilities than the other options.
+
+## Analysis
+
+All the tools have advantages and disadvantages but a decision for one of them should be made
+thinking on the current requirements but also on the future ones.
+On the side of the self-hosted options, Prometheus is a widely accepted tool for monitoring
+Kubernetes clusters and it can be easily integrated with Google Cloud Platform. The other two
+options do not have the ease to monitor Kubernetes Clusters and can be, in this case, consider
+as inferior choices.
+On the side of the SaaS options, the most appealing options are New Relic and Google Cloud
+Stackdriver. The main difference can be encoutered on pricing. While New Relic have an
+increasing rate base on data analized for all the monitorized variables, GCP is free of charge
+for Kubernetes monitoring and only produces charges for the BlueMedora incoming data. This can
+lead to great differences on pricing.
+
+## Conclusion
+
+My personal recommendation for this case will be Google Cloud Stackdriver. This service can be
+easily integrated with a Kubernetes Cluster running on GCP and it has also an option for
+monitoring the other components of the application using BlueMedora service. The pricing advantage
+can be huge on systems that tend to scale up. The only downside is that relying on the same
+service provider for multiple things could lead to a complicated migration if the services
+conditions change.
+If a self-hosted option is prefered, I will recommend Prometheus. It is easily integrated with
+Kubernetes Clusters and Google Cloud Platform for monitoring and it has third party options for
+monitoring the rest of the components. It can be configured in a Highly available configuration,
+but of course, in contrast to a SaaS, the possible scalability issues must be taken care of
+in house.
