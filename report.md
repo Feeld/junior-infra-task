@@ -83,3 +83,21 @@ Postgres, Redis, MongoDB, and RabbitMQ can also be monitored with third party ex
 ### Disadvantages:
 
 * Rely on third party exportes for the rest of the services involved.
+
+## New Relic
+
+New Relic is an observability platform that helps the user to monitorize the activity of their
+apps and respond faster to failure. It supports native integration with various Google Cloud
+Platform services, including the Google Kubernetes Engine.
+Postgress, Redis, MongoDB and RabbitMQ can also be integrated with the New Relic system.
+Pricing is based on the ammount of data ingested by the system.
+
+### Advantages:
+
+* Easy integration with GCP.
+* Easy Kubernetes integration.
+* Easy integration with the rest of the components.
+
+### Disadvantages:
+
+* Further analysis on pricing should be performed.
