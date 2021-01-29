@@ -104,7 +104,7 @@ Pricing is based on the ammount of data ingested by the system.
 
 ### Disadvantages:
 
-* Further analysis on pricing should be performed.
+* Costs can increase fast depending on the system size.
 
 ## Google Cloud Stackdriver
 
