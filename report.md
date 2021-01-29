@@ -34,8 +34,8 @@ A brief description of each of them will be provide next.
 Icinga is a monitoring system which checks the availability of the network resources, notifies
 users of outages and generates performance data for reporting. It allows the user to monitor
 public cloud providers including Google Cloud Platform and easily scale like the cloud does.
-The monitorization of a Kubernetes cluster is not easily done with Icinga, but there are third
-party collaborators that have written some applications in order to accomplish that goal.
+The monitorization of a Kubernetes cluster is not built-in on Icinga, but there are third
+party collaborators that have written some plugins in order to accomplish that goal.
 Postgres, MongoDB and RabbitMQ can also be monitored using Icinga.
 
 ### Advantages:
@@ -45,7 +45,7 @@ Postgres, MongoDB and RabbitMQ can also be monitored using Icinga.
 
 ### Disadvantages:
 
-* Rely on third party applications to monitor a Kubernetes cluster.
+* Rely on third party plugins to monitor a Kubernetes cluster.
 
 ## Zabbix
 
