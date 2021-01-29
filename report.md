@@ -160,10 +160,10 @@ My personal recommendation for this case will be Google Cloud Stackdriver. This 
 easily integrated with a Kubernetes Cluster running on GCP and it has also an option for
 monitoring the other components of the application using BlueMedora service. The pricing advantage
 can be huge on systems that tend to scale up. The only downside is that relying on the same
-service provider for multiple things could lead to a complicated migration if the services
-conditions change.
+service provider for multiple things could lead to a complicated migration if needed, for example,
+if Google Clound services conditions change.
 If a self-hosted option is prefered, I will recommend Prometheus. It is easily integrated with
 Kubernetes Clusters and Google Cloud Platform for monitoring and it has third party options for
-monitoring the rest of the components. It can be configured in a Highly available configuration,
-but of course, in contrast to a SaaS, the possible scalability issues must be taken care of
-in house.
+monitoring the rest of the components. It is algo widely adopted as a Kubernetes Cluster
+monitoring tool. It can be configured in a Highly available configuration, but of course, in
+contrast to a SaaS, the possible scalability issues must be taken care of in house.
