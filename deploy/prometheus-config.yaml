@@ -6,23 +6,3 @@ metadata:
         namespace: prometheus
 data:
         prometheus.yaml: |
-                global:
-                        scrape_interval: ${SCRAPE_INTERVAL}
-                        evaluation_interval: ${EVALUATION_INTERVAL}
-                alerting:
-                        alertmanagers:
-                                - static_configs:
-                                        - targets:
-                                                - alertmanager: 9093
-                rules:
-                        - ${RULES_FILE}
-                scrape_configs:
-                        - job_name: 'prometheus'
-                          static_configs:
-                                  - targets: ['localhost:10000']
-                remote_read:
-                        - url: ${URL_READ}
-                          bearer_token: ${API_KEY}
-                remote_write:
-                        - url: ${URL_WRITE}
-                          bearer_token: ${API_KEY}
