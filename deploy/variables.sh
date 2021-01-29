@@ -1,0 +1,6 @@
+export SCRAPE_INTERVAL='5s'
+export EVALUATION_INTERVAL='5s'
+export RULES_FILE='rules.yaml'
+export URL_READ='placeholder'
+export URL_WRITE='placeholder'
+export API_KEY='placeholder'
