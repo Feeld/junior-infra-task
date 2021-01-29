@@ -5,9 +5,9 @@
 	        alertmanagers:
 	        - static_configs:
 	          - targets:
-	                  #- alertmanager: 9093
+                          # - alertmanager: 9093
 	rule_files:
-	        #- 'rules.yaml'
+                - 'ssl.rules'
 	scrape_configs:
 	        - job_name: 'kubernetes-nodes'
 	          scheme: https
@@ -49,6 +49,20 @@
 	                  - source_labels: [__meta_kubernetes_pod_name]
 	                    action: replace
 	                    target_label: kubernetes_pod_name
+                - job_name: 'blackbox-ssl'
+                  metrics_path: /probe
+                  params:
+                          module: [http_2xx]
+                  static_configs:
+                          - targets:
+                                  - https://feeld.co/
+                  relabel_configs:
+                          - source_labels: [__address__]
+                            target_label: __param_target
+                          - source_labels: [__param_target]
+                            target_label: instance
+                          - target_label: __address__
+                            replacement: prometheus-blackbox-exporter:9115
 	remote_read:
 	        - url: 'placeholder'
 	          bearer_token: 'placeholder'

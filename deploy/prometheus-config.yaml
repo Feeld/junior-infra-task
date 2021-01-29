@@ -5,6 +5,24 @@ metadata:
         name: prometheus-config
         namespace: prometheus
 data:
+        ssl.rules: |
+                groups:
+                        - name: ssl
+                          rules:
+                                  - alert: SslCertificateWillExpireSoon
+                                    expr: probe_ssl_earliest_cert_expiry - time() < 86400 * 30
+                                    for: 5m
+                                    labels:
+                                            severity: warning
+                                    annotations:
+                                            summary: SSL certificate will expire soon
+                                  - alert: SslCertificateHasExpired
+                                    expr: probe_ssl_earliest_cert_expiry - time()  <= 0
+                                    for: 5m
+                                    labels:
+                                            severity: error
+                                    annotations:
+                                            summary: SSL certificate has expired
         prometheus.yaml: |
             global:
                  scrape_interval: 5s
@@ -15,7 +33,7 @@ data:
                    - targets:
                            #- alertmanager: 9093
             rule_files:
-                 #- 'rules.yaml'
+                    - 'ssl.rules'
             scrape_configs:
                  - job_name: 'kubernetes-nodes'
                    scheme: https
@@ -57,6 +75,20 @@ data:
                            - source_labels: [__meta_kubernetes_pod_name]
                              action: replace
                              target_label: kubernetes_pod_name
+                 - job_name: 'blackbox'
+                   metrics_path: /probe
+                   params:
+                           module: [http_2xx]
+                   static_configs:
+                           - targets:
+                                   - https://feeld.co/
+                   relabel_configs:
+                           - source_labels: [__address__]
+                             target_label: __param_target
+                           - source_labels: [__param_target]
+                             target_label: instance
+                           - target_label: __address__
+                             replacement: prometheus-blackbox-exporter:9115
             remote_read:
                  - url: 'placeholder'
                    bearer_token: 'placeholder'
