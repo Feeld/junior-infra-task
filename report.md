@@ -7,6 +7,10 @@ recommend one of them to be deployed on the system.
 ## Understanding the requirements
 The platform is built around Kubernetes on Google Cloud Platform and it is integrated with
 Postgres, Redis, RabbitMQ and MongoDB.
+Postgres and MongoDB are two databases, relational and non relational respectively.
+Redis is an in-memory data structure and can be used as a database, cache and message broker.
+RabbitMQ is a message broker that can be used to send messages to many consumers or to
+distribute tasks among workers.
 
 ## The candidates
 There are two main types of candidates to fulfill this task. Self-hosted and SaaS:
