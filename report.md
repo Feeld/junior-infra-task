@@ -23,6 +23,7 @@ task. Self-hosted and SaaS:
 * Icinga
 * Zabbix
 * Prometheus
+* Jaeger
 
 ### SaaS
 
@@ -97,6 +98,23 @@ exporters.
 ### Disadvantages:
 
 * Rely on third party exportes for the rest of the services involved.
+
+## Jaeger
+
+Jaeger is a distributed open source tracing system. It is used for monitoring
+and troubleshooting microservices based distributed systems. A Jaeger Operator
+can be deployed on a Kubernetes Cluster to start gathering metrics.
+Integration with Postgres, MongoDB, Redis and RabbitMQ to gather specific
+metrics may not be easy or possible.
+
+### Advantages:
+
+* Easy kubernetes integration.
+* Available in Google Cloud store for easy deployment.
+
+### Disadvantages:
+
+* It may not be possible to integrate with the other components.
 
 ## New Relic
 
@@ -180,8 +198,10 @@ All the tools have advantages and disadvantages but a decision for one of them
 should be made thinking on the current requirements but also on the future ones.
 On the side of the self-hosted options, Prometheus is a widely accepted tool for
 monitoring Kubernetes clusters and it can be easily integrated with Google Cloud
-Platform. The other two options do not have the ease to monitor Kubernetes
-Clusters and can be, in this case, consider as inferior choices.
+Platform. Icinga and Zabbix do not have the ease to monitor Kubernetes
+Clusters and can be, in this case, consider as inferior choices. Jaeger
+integration with the rest of the system components may be difficult, therefore
+is an inferior choice.
 On the side of the SaaS's, the most appealing options are New Relic, Datadog
 and Google Cloud Stackdriver. The main difference can be encoutered
 on pricing.
