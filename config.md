@@ -69,9 +69,65 @@ To test a probe against Feeld website, we can go to the following url:
 [http://localhost:9115/probe?module=http_2xx&target=https://feeld.co&debug=true](http://localhost:9115/probe?module=http_2xx&target=https://feeld.co&debug=true)
 To start monitoring the website, we must add the Blacakbox exporter as a target
 for Prometheus. This can be done by adding a new job on the *scrape_configs*
-section of the *prometheus.yaml* configuration file. After that a new set of
+section of the *prometheus.yaml* configuration file. After that, a new set of
 rules must be added on the *rule_files* section.
 In this case the rules are specified on the *ssl.rules* file. There is a
 warning type rule that let us know whenever the web certificate expiration time
 is 30 days or less. There is also an alert type rule that let us know if the
 certificate has expired.
+
+## Further steps
+
+Further monitoring checks can be set up for the rest of the system components.
+I propose the following:
+
+### HTTP API
+
+* Latency.
+* Response time.
+* Availability.
+* Failure rate.
+* Correct status codes.
+
+The previously mentioned Blackbox exporter can be used to measure these metrics.
+
+### Postgres and MongoDB
+
+* Response time.
+* Disk usage.
+* CPU usage.
+* Memory usage.
+* Load average.
+* Number of active sessions.
+* Database locks.
+
+There is a [Postgres exporter](https://github.com/wrouesnel/postgres_exporter) for Prometheus to scrape these metrics.
+Similar considerations can be done for MongoDB monitoring. There is also an
+[MongoDB exporter](https://github.com/dcu/mongodb_exporter) that Prometheus can scrape.
+
+### Redis
+
+* Latency.
+* Instantaneous operations per second.
+* Hit rate.
+* Memory fragmentation ratio.
+* Memory usage.
+* Connected slaves.
+* Rejected connections count.
+* Keyspace misses(number of keys requested that do not exists)
+
+There is a [Redis exporter](https://github.com/oliver006/redis_exporte) that helps Prometheus gather thouse metrics.
+
+### RabbitMQ
+
+* Published in/out messages count.
+* Unroutable messages count.
+* Number of connections.
+* Disk usage.
+* Memory usage.
+* Queue depth.
+* Messages rates.
+* Messages unacknowledged count.
+
+There is a [RabbitMQ exporter](https://github.com/kbudde/rabbitmq_exporter) that helps Prometheus scrape thouse metrics.
+
