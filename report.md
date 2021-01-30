@@ -29,6 +29,7 @@ task. Self-hosted and SaaS:
 * New Relic
 * Google Cloud Stackdriver
 * OpsGenie
+* Datadog
 
 A brief description of each of them will be provide next.
 
@@ -153,6 +154,26 @@ Pricing depends on the type of plan selected and the ammount of users to notify.
 
 * Provides less capabilities than the other options.
 
+## Datadog
+Datadog is a security and monitoring tool for cloud applications. It can bring
+together end-to-end traces, metrics and logs of applications and infrastructure.
+It can be integrated with Google Kubernetes Engine to collect node-level and
+pod-level metrics from the cluster. To collect these second metrics a
+containerized version of the Datadog Agent must be deployed on the cluster.
+Datadog has also integrations to collect metrics from Postgres, MongoDB, Redis
+and RabbitMQ
+
+### Advantages:
+
+* Easy integration with GKE.
+* Easy integration with the rest of the components.
+* Detailed documentation.
+
+### Disadvantages:
+
+* Pricing depends on number of hosts and plan. Further analisis must be
+  performed.
+
 ## Analysis
 
 All the tools have advantages and disadvantages but a decision for one of them
@@ -161,10 +182,12 @@ On the side of the self-hosted options, Prometheus is a widely accepted tool for
 monitoring Kubernetes clusters and it can be easily integrated with Google Cloud
 Platform. The other two options do not have the ease to monitor Kubernetes
 Clusters and can be, in this case, consider as inferior choices.
-On the side of the SaaS options, the most appealing options are New Relic and
-Google Cloud Stackdriver. The main difference can be encoutered on pricing.
+On the side of the SaaS options, the most appealing options are New Relic,
+Datadog and Google Cloud Stackdriver. The main difference can be encoutered
+on pricing.
 While New Relic have an increasing rate base on data analized for all the
-monitorized variables, GCP is free of charge for Kubernetes monitoring and only
+monitorized variables and Datadog princing depends on the amount of hosts and
+selected services, GCP is free of charge for Kubernetes monitoring and only
 produces charges for the BlueMedora incoming data. This can lead to great
 differences on pricing.
 
