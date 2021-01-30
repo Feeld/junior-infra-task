@@ -41,4 +41,37 @@ kubectl apply -f prometheus-nodeservice.yaml # Exposes prometheus service
 kubectl apply -f node-exporter-daemonset.yaml # Deploys the node exporter
 ```
 *Note*: These files can be combined into one yaml file. They were splited for
-the purpose of the task. 
+the purpose of the task.
+
+## Blackbox exporter
+
+The Blackbox exporter allows blacbox probing of endpoints over HTTP, HTTPS, DNS,
+TCP and ICMP. The probing results can be scraped by Prometheus.
+Inside the *blackbox_deploy* folder there is a Kubernetes manifest for the
+deployment of a blackbox-exporter pod.
+*blackbox.yaml* is a configuration file, that allows us to define various tests
+to perform on the target.
+In order to get Blackbox exporter up and running, the following command must be
+executed:
+
+```
+kubectl apply -f blackbox-deployment.yaml
+```
+
+We can test it as follows:
+
+```
+kubectl port-forward --namespace=blackbox-exporter svc/prometheus-blackbox-exporter 9115:9115
+```
+
+This will map the blackbox service to [http://localhost:9115](http://localhost:9115)
+To test a probe against Feeld website, we can go to the following url:
+[http://localhost:9115/probe?module=http_2xx&target=https://feeld.co&debug=true](http://localhost:9115/probe?module=http_2xx&target=https://feeld.co&debug=true)
+To start monitoring the website, we must add the Blacakbox exporter as a target
+for Prometheus. This can be done by adding a new job on the *scrape_configs*
+section of the *prometheus.yaml* configuration file. After that a new set of
+rules must be added on the *rule_files* section.
+In this case the rules are specified on the *ssl.rules* file. There is a
+warning type rule that let us know whenever the web certificate expiration time
+is 30 days or less. There is also an alert type rule that let us know if the
+certificate has expired.
