@@ -5,10 +5,10 @@ on Prometheus.
 
 ## Sections
 
-* [Prometheus exporters] (Exporters)
-* [Deploying Prometheus] (Prometheus deployment)
-* [Blackbox exporter] (Blackbox exporter)
-* [Further steps] (Further steps)
+* [Prometheus exporters](#exporters)
+* [Deploying Prometheus](#prometheus-deployment)
+* [Blackbox exporter](#blackbox-exporter)
+* [Further steps](#further-steps)
 
 ## Exporters
 
