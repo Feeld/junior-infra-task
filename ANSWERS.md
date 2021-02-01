@@ -12,6 +12,8 @@ Monitoring the cluster gives an acrros the board/overall platform health view, c
 5. [New Relic](#newrelic)
 6. [Google Stack Driver](#stackdriver)
 7. [OpsGenie](#opsgenie)
+8. [Key Metrics](#keymetrics)
+9. [Conclusion](#conclusion)
 
 <a name="icinga"/>
 
@@ -169,9 +171,13 @@ If there are a number o recourse being used Stack Driver can get expensive.
 
 OpsGenie is a 
 
+<a name="keymetrics"/>
+
 ## Key Metrics
 Key metrics for Kubernetes monitoring:
 Key metrics for RabbitMQ monitoring:
+
+<a name="conclusion"/>
 
 ## Conclusion
 
