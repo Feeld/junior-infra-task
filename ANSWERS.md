@@ -4,33 +4,30 @@ A Report Evaluating the Best System Monitoring Tool/s For a K8s Platform on GCP
 
 Monitoring the cluster gives an acrros the board/overall platform health view, cluster resource utilisation (is infrastructure under- or over-utalised).
 
+## Table of contents
+1. [Icinga](#icinga)
+
+<a name="icinga"/>
 ### Icinga
 
 Icinga is not as well established as some of the other monitoring tools in this report. Icinga is a free product but the integration maybe costly (hrs).
 Nodes can be congfigured as active or passive and this will allow for splitting load monitoring and database interactions (good for load balancing).
 
-Pricing - \
-Reliability - \
-Support - None \
-Features - Monotoring, Alerts (details affect services when there is downtime), Web Interface 
+Ease:
+
+How to integrate Icinga to monitor:
+
+  Kubernetes -
+ 
+Features: 
+
+  Monotoring, Alerts (details affect services when there is downtime), Web Interface 
 
 How well does *Icinga* intergrate with K8s running in GCP? \
 How well does *Icinga* intergrate with GCP APIs? \
 How well does *Icinga* intergrate with Postgres, Redis, RabbitMG and MongoDB? 
 
-### Icinga
-
-Ease:
-
-How to integrate Icinga monitoring to:
-  K8s - GCP APIs - Postgres - Redis - RabbitMQ - MongoDB - 
-  
-Features:
-  
-
-
 Reliability:
-
 
 
 ### Zabbix
