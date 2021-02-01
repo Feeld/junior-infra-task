@@ -18,6 +18,106 @@ How well does *Icinga* intergrate with K8s running in GCP? \
 How well does *Icinga* intergrate with GCP APIs? \
 How well does *Icinga* intergrate with Postgres, Redis, RabbitMG and MongoDB? 
 
+### Icinga
+
+Ease:
+
+How to integrate Icinga monitoring to:
+  K8s - GCP APIs - Postgres - Redis - RabbitMQ - MongoDB - 
+  
+Features:
+  
+
+
+Reliability:
+
+
+
+### Zabbix
+
+Ease:
+
+How to integrate Zabbix monitoring to:
+
+  K8s - Not possible out of the box but some [solutions](https://www.zabbix.com/integrations/kubernetes) are available, using docker images and Nagios like [extensions](https://github.com/agapoff/check_kubernetes).
+  GCP APIs - Zabbix can be intergrated for GCP monitoring using the Stack Driver API, instructions available [here](https://github.com/ingrammicro/gcpmetrics/wiki/Google-Cloud-Platform-monitoring-with-Zabbix).
+  Postgres - A Zabbix [template](https://www.zabbix.com/integrations/postgresql) is available for Postgres monitoring.
+  Redis - There is an out of the box Zabbix [template](https://www.zabbix.com/integrations/redis) for Redis monitoring.
+  RabbitMQ - Out of the box RabbitMQ intergration using a [template app](https://www.zabbix.com/integrations/rabbitmq).
+  MongoDB - There are several Zabbix [plugins](https://www.zabbix.com/integrations/mongodb) available for monitoring MongoDB.
+  
+  Zabbix has out of the box intergration soultions forhalf of the systems in the stack.
+  
+Features:
+
+  K8s - The [check_kubernetes](https://github.com/agapoff/check_kubernetes) extension will allow for checking failed jobs, TLS certificates, deployments,apiserver health and a few more metrics.
+  GCP APIs - GCP metrics of monitored recourses if integrated with Stack Driver API.
+  Postgres - Monitors Tablespaces, Databases, Namespaces, Tables and Indexes.
+  Redis - Availability, Memory and Databases
+  RabbitMQ - Will Monitor Channels, Exchanges, Ques.
+  MongoDB -  Availability, resource utilization and health.
+
+Reliability:
+
+Zabbix maybe reliable for the systems it offers native monitoring solutions for  but it is hard to say for the non-native supported system.
+
+### Nagios
+
+Ease:
+
+How to integrate Nagios monitoring to:
+  K8s - GCP APIs - Postgres - Redis - RabbitMQ - MongoDB - 
+  
+Features:
+  
+
+
+Reliability:
+
+
+
+### Prometheus
+
+Ease:
+
+How to integrate Prometheus monitoring to:
+  K8s - GCP APIs - Postgres - Redis - RabbitMQ - MongoDB - 
+  
+Features:
+  
+
+
+Reliability:
+
+
+### New Relic
+
+Ease:
+
+How to integrate New Relic monitoring to:
+  K8s - GCP APIs - Postgres - Redis - RabbitMQ - MongoDB - 
+  
+Features:
+  
+
+
+Reliability:
+
+
+### Google Stack Driver
+
+Ease:
+
+How to integrate Google Stack Driver monitoring to:
+  K8s - GCP APIs - Postgres - Redis - RabbitMQ - MongoDB - 
+  
+Features:
+  
+
+
+Reliability:
+
+
 ### Nagios
 
 // Note there is Nagios-Core and Nagios-XI//
@@ -33,7 +133,8 @@ Features -
 How well does *Nagios* intergrate with K8s running in GCP?
 How well does *Nagios* intergrate with GCP APIs?
 
-There is a [service](https://console.cloud.google.com/marketplace/product/cloud-infrastructure-services/nagios-ubuntu-20-04?pli=1&project=autobot-296021&folder=&organizationId=) for Nagios Core monitoring setup on GCP with a Cost of ~£35.00. Another option is to use [check_rest_api](https://exchange.nagios.org/directory/Plugins/Network-Protocols/HTTP/check_rest_api-%7C-Monitor-data-from-a-REST-API/details), a plugin used to monitor data from REST APIs.
+The google cloud [documentation](https://cloud.google.com/docs/compare/data-centers/management) mentions 
+There is a [service](https://console.cloud.google.com/marketplace/product/cloud-infrastructure-services/nagios-ubuntu-20-04?pli=1&project=autobot-296021&folder=&organizationId=) for Nagios Core monitoring setup on GCP with a Cost of ~£35.00. Another option is to use [check_rest_api](https://exchange.nagios.org/directory/Plugins/Network-Protocols/HTTP/check_rest_api-%7C-Monitor-data-from-a-REST-API/details), a plugin used to monitor data from REST APIs. Documentation
 
 How well does *Nagios* intergrate with Postgres, Redis, RabbitMG and MongoDB?
 
@@ -68,7 +169,20 @@ Monitors the costs of GCP usage.
 
 If there are a number o recourse being used Stack Driver can get expensive.
 
+### OpsGenie
+
+OpsGenie is a 
+
 ## Conclusion
+
+
+|             | Icinga                |Zabbix                 |Prometheus              |New Relic               |Google Cloud Stackdriver|Opsgenie             |
+| ------------|:---------------------:|----------------------:|-----------------------:|:----------------------:|-----------------------:|--------------------:|
+| Ease of Use | right-aligned | $1600 |                       |                        |                        |                        |                     |
+| Features    | centered      |   $12 |                       |                        |                        |                        |                     |
+| Reliability | are neat      |    $1 |                       |                        |                        |                        |                     |
+| Reliability | are neat      |    $1 |                       |                        |                        |                        |                     |
+
 
 Icinga and Nagios have the necessary features and addons/extension to make them useful for Kubeneters monitoring. These tools are developed and mantained by very small communities and this is not are bad thing but it does indicate the level of interest in these tools on the Kubernetes community. More popular projects usually mean more contributors and that can translate to meore people who understand the code theus, when there are issues the are more people to help with troubleshooting and chances are that someone in the community would have had the same issue at some point.
 
@@ -76,4 +190,5 @@ Kubenetes components export metrics in Prometheus format
 
 Pulling instead of pushing
 
+When there is a problem with a tool that does not have a significant community it will require more time to find a solution. 
 
