@@ -8,7 +8,8 @@ Monitoring the cluster gives an acrros the board/overall platform health view, c
 1. [Icinga](#icinga)
 
 <a name="icinga"/>
-### Icinga
+
+#### Icinga
 
 Icinga is not as well established as some of the other monitoring tools in this report. Icinga is a free product but the integration maybe costly (hrs).
 Nodes can be congfigured as active or passive and this will allow for splitting load monitoring and database interactions (good for load balancing).
@@ -17,11 +18,12 @@ Ease:
 
 How to integrate Icinga to monitor:
 
-  Kubernetes -
+  Kubernetes - There is no native support for monitoring kubernetes clusters with Icinga but there are tools available mantained by the Icinga community. [Check_Kubernetes](https://exchange.icinga.com/neubi4/check_kubernetes) is a plugin that can be found on the Icinga exchange, it provide deployment, nodes, scheduler, and controller information. For Cloud services and or Kubernetes, target the load balancer address or the Kubernetes Service or Ingress addresses for monitoring.
+  GCP ApIs - No specialised gcp support but there some are tools made available in the [Advanced Nagios Plugins Collection](https://exchange.icinga.com/harisekhon/Advanced%20Nagios%20Plugins%20Collection%20%28NoSQL%2C%20Hadoop%2C%20Redis%2C%20Cassandra%2C%20Elasticsearch%2C%20Solr%2C%20MySQL%2C%20Linux%2C%20HBase%2C%20MongoDB%20etc%29), they allow Icinga integration with Redis, RabbitMQ, Postgres and MongoDB. The documentatioin [here](https://exchange.icinga.com/harisekhon/Advanced%20Nagios%20Plugins%20Collection%20%28NoSQL%2C%20Hadoop%2C%20Redis%2C%20Cassandra%2C%20Elasticsearch%2C%20Solr%2C%20MySQL%2C%20Linux%2C%20HBase%2C%20MongoDB%20etc%29) suggests that these plugins can allow extensive checks.
  
 Features: 
 
-  Monotoring, Alerts (details affect services when there is downtime), Web Interface 
+  Monotoring (Performance), Alerts, Text Notifications, Dashboards (visualisation), REST API, 
 
 How well does *Icinga* intergrate with K8s running in GCP? \
 How well does *Icinga* intergrate with GCP APIs? \
@@ -29,6 +31,7 @@ How well does *Icinga* intergrate with Postgres, Redis, RabbitMG and MongoDB?
 
 Reliability:
 
+  Icinga doen nnot offer kubernetes May not be reliable for auto-scaling based systems (K8s)
 
 ### Zabbix
 
@@ -89,6 +92,9 @@ Reliability:
 
 ### New Relic
 
+All in one monitoring.
+See performance from the end users point of view.
+
 Ease:
 
 How to integrate New Relic monitoring to:
@@ -100,6 +106,7 @@ Features:
 
 Reliability:
 
+  Even if there was a move to heroku or AWS, New Relic supports both platforms
 
 ### Google Stack Driver
 
@@ -170,6 +177,10 @@ If there are a number o recourse being used Stack Driver can get expensive.
 
 OpsGenie is a 
 
+## Key Metrics
+Key metrics for Kubernetes monitoring:
+Key metrics for RabbitMQ monitoring:
+
 ## Conclusion
 
 
@@ -182,6 +193,8 @@ OpsGenie is a
 
 
 Icinga and Nagios have the necessary features and addons/extension to make them useful for Kubeneters monitoring. These tools are developed and mantained by very small communities and this is not are bad thing but it does indicate the level of interest in these tools on the Kubernetes community. More popular projects usually mean more contributors and that can translate to meore people who understand the code theus, when there are issues the are more people to help with troubleshooting and chances are that someone in the community would have had the same issue at some point.
+
+Monitoring the cluster gives an across an overall view of platform health,
 
 Kubenetes components export metrics in Prometheus format
 
