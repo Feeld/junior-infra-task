@@ -6,38 +6,37 @@ Monitoring the cluster gives an acrros the board/overall platform health view, c
 
 ## Table of contents
 1. [Icinga](#icinga)
+2. [Zabbix](#zabbix)
 
 <a name="icinga"/>
 
 #### Icinga
 
-Icinga is not as well established as some of the other monitoring tools in this report. Icinga is a free product but the integration maybe costly (hrs).
+Github - 480 forks, ~240 contributors
+
+Icinga is a free product but the integration maybe costly (hrs).
 Nodes can be congfigured as active or passive and this will allow for splitting load monitoring and database interactions (good for load balancing).
 
 Ease:
 
-How to integrate Icinga to monitor:
+  Icinga is not easy to intergrate with kubernetes, there is no native support for monitoring kubernetes clusters with Icinga but there are tools available mantained by the Icinga community. [Check_Kubernetes](https://exchange.icinga.com/neubi4/check_kubernetes) is a plugin that can be found on the Icinga exchange, it provide deployment, nodes, scheduler, and controller information. For Cloud services and or Kubernetes, target the load balancer address or the Kubernetes Service or Ingress addresses for monitoring.
+    GCP ApIs - No specialised gcp support but there some are tools made available in the [Advanced Nagios Plugins Collection](https://exchange.icinga.com/harisekhon/Advanced%20Nagios%20Plugins%20Collection%20%28NoSQL%2C%20Hadoop%2C%20Redis%2C%20Cassandra%2C%20Elasticsearch%2C%20Solr%2C%20MySQL%2C%20Linux%2C%20HBase%2C%20MongoDB%20etc%29), they allow Icinga integration with Redis, RabbitMQ, Postgres and MongoDB. The documentatioin [here](https://exchange.icinga.com/harisekhon/Advanced%20Nagios%20Plugins%20Collection%20%28NoSQL%2C%20Hadoop%2C%20Redis%2C%20Cassandra%2C%20Elasticsearch%2C%20Solr%2C%20MySQL%2C%20Linux%2C%20HBase%2C%20MongoDB%20etc%29) suggests that these plugins can allow extensive checks.
 
-  Kubernetes - There is no native support for monitoring kubernetes clusters with Icinga but there are tools available mantained by the Icinga community. [Check_Kubernetes](https://exchange.icinga.com/neubi4/check_kubernetes) is a plugin that can be found on the Icinga exchange, it provide deployment, nodes, scheduler, and controller information. For Cloud services and or Kubernetes, target the load balancer address or the Kubernetes Service or Ingress addresses for monitoring.
-  GCP ApIs - No specialised gcp support but there some are tools made available in the [Advanced Nagios Plugins Collection](https://exchange.icinga.com/harisekhon/Advanced%20Nagios%20Plugins%20Collection%20%28NoSQL%2C%20Hadoop%2C%20Redis%2C%20Cassandra%2C%20Elasticsearch%2C%20Solr%2C%20MySQL%2C%20Linux%2C%20HBase%2C%20MongoDB%20etc%29), they allow Icinga integration with Redis, RabbitMQ, Postgres and MongoDB. The documentatioin [here](https://exchange.icinga.com/harisekhon/Advanced%20Nagios%20Plugins%20Collection%20%28NoSQL%2C%20Hadoop%2C%20Redis%2C%20Cassandra%2C%20Elasticsearch%2C%20Solr%2C%20MySQL%2C%20Linux%2C%20HBase%2C%20MongoDB%20etc%29) suggests that these plugins can allow extensive checks.
- 
 Features: 
 
   Monotoring (Performance), Alerts, Text Notifications, Dashboards (visualisation), REST API, 
 
-How well does *Icinga* intergrate with K8s running in GCP? \
-How well does *Icinga* intergrate with GCP APIs? \
-How well does *Icinga* intergrate with Postgres, Redis, RabbitMG and MongoDB? 
-
 Reliability:
 
-  Icinga doen nnot offer kubernetes May not be reliable for auto-scaling based systems (K8s)
+  Icinga does not offer kubernetes native support, the integration is through Nagios plugins which are mantained by the community. The kubernetes-nagios communities are signficantly smaller than some of the other kubernetes monitoring projects. Thus, I would *rely* on the projects with more support and with features that align with this project.
+
+<a name="zabbix"/>
 
 ### Zabbix
 
-Ease:
+Github - ~444 forks, ~8 contributors
 
-How to integrate Zabbix monitoring to:
+Ease:
 
   K8s - Not possible out of the box but some [solutions](https://www.zabbix.com/integrations/kubernetes) are available, using docker images and Nagios like [extensions](https://github.com/agapoff/check_kubernetes).
   GCP APIs - Zabbix can be intergrated for GCP monitoring using the Stack Driver API, instructions available [here](https://github.com/ingrammicro/gcpmetrics/wiki/Google-Cloud-Platform-monitoring-with-Zabbix).
@@ -45,8 +44,6 @@ How to integrate Zabbix monitoring to:
   Redis - There is an out of the box Zabbix [template](https://www.zabbix.com/integrations/redis) for Redis monitoring.
   RabbitMQ - Out of the box RabbitMQ intergration using a [template app](https://www.zabbix.com/integrations/rabbitmq).
   MongoDB - There are several Zabbix [plugins](https://www.zabbix.com/integrations/mongodb) available for monitoring MongoDB.
-  
-  Zabbix has out of the box intergration soultions forhalf of the systems in the stack.
   
 Features:
 
@@ -59,22 +56,34 @@ Features:
 
 Reliability:
 
-Zabbix maybe reliable for the systems it offers native monitoring solutions for  but it is hard to say for the non-native supported system.
+Zabbix maybe reliable for the systems it offers native monitoring solutions for (Zabbix has out of the box intergration soultions for half of the systems in the stack.)  but it is hard to say for the non-native supported system.
+
+<a name="nagios"/>
 
 ### Nagios
 
+Github - 33 forks, ~5 contributors
+
+Nagios is an established and has a very big commuinity, supports more applications and langauges compared to Icinga. It is generally considered to be a greate monitoring tool for static infrastructure (it would be easier to monitor host device and trickier to monitor containers).
+
 Ease:
 
-How to integrate Nagios monitoring to:
-  K8s - GCP APIs - Postgres - Redis - RabbitMQ - MongoDB - 
-  
+The google cloud [documentation](https://cloud.google.com/docs/compare/data-centers/management) mentions 
+There is a [service](https://console.cloud.google.com/marketplace/product/cloud-infrastructure-services/nagios-ubuntu-20-04?pli=1&project=autobot-296021&folder=&organizationId=) for Nagios Core monitoring setup on GCP with a Cost of ~£35.00. Another option is to use [check_rest_api](https://exchange.nagios.org/directory/Plugins/Network-Protocols/HTTP/check_rest_api-%7C-Monitor-data-from-a-REST-API/details), a plugin used to monitor data from REST APIs. The [Advanced Nagios Plugins Collection](https://exchange.icinga.com/harisekhon/Advanced%20Nagios%20Plugins%20Collection%20%28NoSQL%2C%20Hadoop%2C%20Redis%2C%20Cassandra%2C%20Elasticsearch%2C%20Solr%2C%20MySQL%2C%20Linux%2C%20HBase%2C%20MongoDB%20etc%29) makes available tools for Kubernetes, MongoDB, Postgres, RabbitMQ and Redis. 
+Most Nagios plugins, addons or extensions can be dound on the [exchange](https://exchange.nagios.org). Another noteworthy project is the [Advanced Nadios Plugin Collection](https://github.com/harisekhon/nagios-plugins).
+
+- Nagios can be used to monitor Redis with a list of the plugins that can be found [here](https://github.com/harisekhon/nagios-plugins). There is also a [Regis Enterprise Software Nagios Plugin](https://docs.redislabs.com/latest/rs/administering/monitoring-metrics/nagios-plugin/).
+- There are [MongoDB plugins](https://github.com/mzupan/nagios-plugin-mongodb) that can be used to monnitor MongoDB wiith Nadios.
+- Nagios can be used to monitor Redis using a list of the plugins that can be found [here](https://github.com/harisekhon/nagios-plugins)
+- [Nagios](https://www.nagios.com/solutions/postgres-monitoring/) offers Postgres monitoring, including connection status, databases, table sizes and other metrics.
+
 Features:
   
-
+  Monitoring, Web Interface, Notifications, Event Handlers (proactive problem resolution) and Log File Archiving.
 
 Reliability:
 
-
+<a name="prometheus"/>
 
 ### Prometheus
 
@@ -85,7 +94,7 @@ How to integrate Prometheus monitoring to:
   
 Features:
   
-
+  
 
 Reliability:
 
@@ -121,33 +130,6 @@ Features:
 
 Reliability:
 
-
-### Nagios
-
-// Note there is Nagios-Core and Nagios-XI//
-
-Nagios is an established and has a very big commuinity, supports more applications and langauges compared to Icinga. It is generally considered to be a greate monitoring tool for static infrastructure (it would be easier to monitor host device and trickier to monitor containers). 
-
-Github - 33 forks, ~5 contributors
-Pricing - 
-Reliability - Very Reliable 
-Support - Availvable
-Features - 
-
-How well does *Nagios* intergrate with K8s running in GCP?
-How well does *Nagios* intergrate with GCP APIs?
-
-The google cloud [documentation](https://cloud.google.com/docs/compare/data-centers/management) mentions 
-There is a [service](https://console.cloud.google.com/marketplace/product/cloud-infrastructure-services/nagios-ubuntu-20-04?pli=1&project=autobot-296021&folder=&organizationId=) for Nagios Core monitoring setup on GCP with a Cost of ~£35.00. Another option is to use [check_rest_api](https://exchange.nagios.org/directory/Plugins/Network-Protocols/HTTP/check_rest_api-%7C-Monitor-data-from-a-REST-API/details), a plugin used to monitor data from REST APIs. Documentation
-
-How well does *Nagios* intergrate with Postgres, Redis, RabbitMG and MongoDB?
-
-Most Nagios plugins, addons or extensions can be dound on the [exchange](https://exchange.nagios.org). Another noteworthy project is the [Advanced Nadios Plugin Collection](https://github.com/harisekhon/nagios-plugins).
-
-- Nagios can be used to monitor Redis with a list of the plugins that can be found [here](https://github.com/harisekhon/nagios-plugins). There is also a [Regis Enterprise Software Nagios Plugin](https://docs.redislabs.com/latest/rs/administering/monitoring-metrics/nagios-plugin/).
-- There are [MongoDB plugins](https://github.com/mzupan/nagios-plugin-mongodb) that can be used to monnitor MongoDB wiith Nadios.
-- Nagios can be used to monitor Redis using a list of the plugins that can be found [here](https://github.com/harisekhon/nagios-plugins)
-- [Nagios](https://www.nagios.com/solutions/postgres-monitoring/) offers Postgres monitoring, including connection status, databases, table sizes and other metrics.
 
 
 ### Prometheus
