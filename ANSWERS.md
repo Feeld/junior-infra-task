@@ -7,6 +7,11 @@ Monitoring the cluster gives an acrros the board/overall platform health view, c
 ## Table of contents
 1. [Icinga](#icinga)
 2. [Zabbix](#zabbix)
+3. [Nagios](#nagios)
+4. [Prometheus](#prometheus)
+5. [New Relic](#newrelic)
+6. [Google Stack Driver](#stackdriver)
+7. [OpsGenie](#opsgenie)
 
 <a name="icinga"/>
 
@@ -98,6 +103,7 @@ Features:
 
 Reliability:
 
+<a name="newrelic"/>
 
 ### New Relic
 
@@ -116,6 +122,8 @@ Features:
 Reliability:
 
   Even if there was a move to heroku or AWS, New Relic supports both platforms
+
+<a name="stackdriver"/>
 
 ### Google Stack Driver
 
@@ -154,6 +162,8 @@ How well does *Prometheus* intergrate with Postgres, Redis, RabbitMG and MongoDB
 Monitors the costs of GCP usage.
 
 If there are a number o recourse being used Stack Driver can get expensive.
+
+<a name="opsgenie"/>
 
 ### OpsGenie
 
