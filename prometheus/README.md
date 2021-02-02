@@ -11,3 +11,5 @@ Once the rosources are created run:
 When the window opens through the browser type and enter {job="prometheus"} to see the metrics
 To tidy up, run:
 ```make delete```
+
+Added a 'blackbox' job for ssl/tls monitoring, The metrics if available would be visible through {job="blackbox"}
