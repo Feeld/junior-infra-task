@@ -57,11 +57,31 @@ While it’s really easy to start monitoring Kubernetes with Prometheus, DevOps 
  It’s important to choose the adequate metrics and use as few as possible
  [font](k8 book)
 
+ [font](https://www.youtube.com/watch?v=h4Sl21AKiDg)
+
 
  New Relic uses a centralize platform collection apps and servers push to. Can create a high load of traffic and actually the monitoring can create a bottleneck if we have many microservices sending information to it. also there is the requirement of installing additional software in each of the microservices to send that data to the centralize collection platform.
  
  prometheus requires only a scraping endpoint, this way metrics can be pulled from several prometheus instances.
  Also pulling its a better way of identifying the health of the service as if the endpoint is not available it's pretty clear the service is not healthy, but if the service doesnt push notifications the reasons might vary and is not as clear its health status. network not working, package got lost etc.
+
+ unable to monitor if the container is short lived with the pull endpoint. For that prometheus uses a push gateway notification 
+
+step learning curve into how to correctly configure prometheus, learning promQL, the query language needed to query database of metrics to end up creating grifana dashboards
+
+
+pros: reliable
+      stand alond and self cotain. it works when part of the infrastructure is down.
+      no extensive set up needed
+      less complex
+      monitor of K8s cluster node resources out of the box
+      prometheus components available as docker images
+      can be easily deployed in container environment
+
+cons: difficult to scale. Might need several prometheus servers to collect all the metrics if the applications grows. 
+
+In the other hand, this shortage in the numers of metrics collected can be seen as a good point as it forces administrator to think throughfully and narrow down the metrics that are needed for monitoring without just setting metrics that will serve no purpose. 
+
 
 
 
@@ -72,3 +92,7 @@ While it’s really easy to start monitoring Kubernetes with Prometheus, DevOps 
  what are we really trying to achieve with the monitoring? Cluster resource usage, Node availability and health, Application availability and performance?'
 
  do we use already a tool like grafana o kibana to look at metrics in other services?
+
+ what the average age of feeld containers?
+
+ how many containers are we running in a regular day? is that consider a lot for a prometheus server?
