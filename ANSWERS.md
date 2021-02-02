@@ -147,27 +147,23 @@ Reliability:
 
 <a name="stackdriver"/>
 
-### Google Stack Driver
+### Google Cloud Stackdriver
+
+Google stack driver is now known as (Google Cloud's operations suite). It's a cloud compute management system offering applications and infrastructure dignostic and perfomance data.
 
 Ease:
 
 How to integrate Google Stack Driver monitoring to:
   
-  Google Stack Driver has seemless integration with Kubenetes and Googlge Cloud Platform APIs - Postgres - Redis - RabbitMQ - MongoDB - 
+  Google Cloud's operations suite has out of the box integration with Kubenetes (part of the monitored-resources), Google Cloud Platform APIs including Google Kubernetes Engine (GKE) are also monitored-resources. if one wantes to Monitor a resource not supported in as a monitored-resource. Cloud Operations for GKE aggregates logs, events, and metrics from your Kubernetes environment on GKE. Postgres, RabbitMQ and MongoDB can be integrated with Google Cloud's operations suite using[Bbindplane](https://docs.bindplane.bluemedora.com/docs/bindplane-sources). Cloud monitoring can still discover a Redis instance running on the the [Cloud Platform project](https://cloud.google.com/monitoring/agent/plugins/redis), if "redis" is in the names of **VM instances** and firewall rules open to **6379**.
   
 Features:
   
-
+  Monitoring, Logging, Alerting, Tracing, Production Debugger, Querying, Dashboards and Multi-Cloud.
 
 Reliability:
 
   
-
-### Stack Driver 
-
-Monitors the costs of GCP usage.
-
-If there are a number o recourse being used Stack Driver can get expensive.
 
 <a name="opsgenie"/>
 
@@ -195,6 +191,9 @@ Key metrics for RabbitMQ monitoring:
 
 
 Icinga and Nagios have the necessary features and addons/extension to make them useful for Kubeneters monitoring. These tools are developed and mantained by very small communities and this is not are bad thing but it does indicate the level of interest in these tools on the Kubernetes community. More popular projects usually mean more contributors and that can translate to meore people who understand the code theus, when there are issues the are more people to help with troubleshooting and chances are that someone in the community would have had the same issue at some point.
+If there are a number o recourse being used Stack Driver can get expensive.
+
+The easiet to integrate is between google and prometheus, with prometheus service export metrics out of the box and google also has access to these natively.
 
 Monitoring the cluster gives an across an overall view of platform health,
 
