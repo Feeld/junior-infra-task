@@ -37,9 +37,7 @@ scrape_configs:
       module: [http_2xx]  # Look for a HTTP 200 response.
     static_configs:
       - targets:
-        - http://prometheus.io    # Target to probe with http.
-        - https://prometheus.io   # Target to probe with https.
-        - http://example.com:8080 # Target to probe with http on port 8080.
+        - https://feeld.co
     relabel_configs:
       - source_labels: [__address__]
         target_label: __param_target
