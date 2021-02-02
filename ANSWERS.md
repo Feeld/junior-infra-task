@@ -1,6 +1,6 @@
 # Monitoring System Options
 
-A Report Evaluating the Best System Monitoring Tool/s For a K8s Platform on GCP
+A Report Evaluating the Best System Monitoring Tool/s For a Kubernetes Platform on GCP
 
 Monitoring the cluster gives an across the board/overall platform health view, cluster resource utilisation (is infrastructure under- or over-utalised).
 
@@ -82,7 +82,7 @@ Features:
 
 Reliability:
 
-  It is said to run realibly especially for once setup, especially for  static infrastructure.
+  It is said to run realibly once setup, especially for  static infrastructure. DHL, Domino's Pizza, McAfee all use Nagios but it is worth noting that they may be using an Enterprise verison of Nagios that comes with support.
 
 <a name="prometheus"/>
 
