@@ -7,21 +7,25 @@ Monitoring the cluster gives an acrros the board/overall platform health view, c
 ## Table of contents
 
 1. [Self-Hosted Tools](#selfhosted)
-2. [Icinga](#icinga)
-3. [Zabbix](#zabbix)
-4. [Nagios](#nagios)
-5. [Prometheus](#prometheus)
-6. [SaaS Tools](#saas)
-7. [New Relic](#newrelic)
-8. [Google Stack Driver](#stackdriver)
-9. [OpsGenie](#opsgenie)
-10. [Key Metrics](#keymetrics)
-11. [Conclusion](#conclusion)
+2.    [Icinga](#icinga)
+3.    [Zabbix](#zabbix)
+4.    [Nagios](#nagios)
+5.    [Prometheus](#prometheus)
+6.    [Table 1](#table1)
+7. [SaaS Tools](#saas)
+8.    [New Relic](#newrelic)
+9.    [Google Stack Driver](#stackdriver)
+10.    [OpsGenie](#opsgenie)
+11.   [Table 2](#table2)
+12. [Conclusion](#conclusion)
+13. [Key Metrics](#keymetrics)
 
 <a name="selfhosted"/>
+
 ## Self-Hosted Tools
 
 <a name="icinga"/>
+
 #### Icinga
 
 Github - 480 forks, ~240 contributors
@@ -29,7 +33,7 @@ Github - 480 forks, ~240 contributors
 Icinga is a free product but the integration maybe costly (hrs).
 Nodes can be congfigured as active or passive and this will allow for splitting load monitoring and database interactions (good for load balancing).
 
-Ease:
+Integrations:
 
   Icinga is not easy to intergrate with kubernetes, there is no native support for monitoring kubernetes clusters with Icinga but there are tools available mantained by the Icinga community. [Check_Kubernetes](https://exchange.icinga.com/neubi4/check_kubernetes) is a plugin that can be found on the Icinga exchange, it provide deployment, nodes, scheduler, and controller information. For Cloud services and or Kubernetes, target the load balancer address or the Kubernetes Service or Ingress addresses for monitoring.
     GCP ApIs - No specialised gcp support but there some are tools made available in the [Advanced Nagios Plugins Collection](https://exchange.icinga.com/harisekhon/Advanced%20Nagios%20Plugins%20Collection%20%28NoSQL%2C%20Hadoop%2C%20Redis%2C%20Cassandra%2C%20Elasticsearch%2C%20Solr%2C%20MySQL%2C%20Linux%2C%20HBase%2C%20MongoDB%20etc%29), they allow Icinga integration with Redis, RabbitMQ, Postgres and MongoDB. The documentatioin [here](https://exchange.icinga.com/harisekhon/Advanced%20Nagios%20Plugins%20Collection%20%28NoSQL%2C%20Hadoop%2C%20Redis%2C%20Cassandra%2C%20Elasticsearch%2C%20Solr%2C%20MySQL%2C%20Linux%2C%20HBase%2C%20MongoDB%20etc%29) suggests that these plugins can allow extensive checks.
@@ -48,7 +52,7 @@ Reliability:
 
 Github - ~444 forks, ~8 contributors
 
-Ease:
+Integrations:
 
   K8s - Not possible out of the box but some [solutions](https://www.zabbix.com/integrations/kubernetes) are available, using docker images and Nagios like [extensions](https://github.com/agapoff/check_kubernetes).
   GCP APIs - Zabbix can be intergrated for GCP monitoring using the Stack Driver API, instructions available [here](https://github.com/ingrammicro/gcpmetrics/wiki/Google-Cloud-Platform-monitoring-with-Zabbix).
@@ -78,7 +82,7 @@ Github - 340 forks, ~52 contributors
 
 Nagios is an established and has a very big commuinity, supports more applications and langauges compared to Icinga. It is generally considered to be a greate monitoring tool for static infrastructure (it would be easier to monitor host device and trickier to monitor containers).
 
-Ease:
+Integrations:
 
 The google cloud [documentation](https://cloud.google.com/docs/compare/data-centers/management) mentions 
 There is a [service](https://console.cloud.google.com/marketplace/product/cloud-infrastructure-services/nagios-ubuntu-20-04?pli=1&project=autobot-296021&folder=&organizationId=) for Nagios Core monitoring setup on GCP with a Cost of ~£35.00. Another option is to use [check_rest_api](https://exchange.nagios.org/directory/Plugins/Network-Protocols/HTTP/check_rest_api-%7C-Monitor-data-from-a-REST-API/details), a plugin used to monitor data from REST APIs. The [Advanced Nagios Plugins Collection](https://exchange.icinga.com/harisekhon/Advanced%20Nagios%20Plugins%20Collection%20%28NoSQL%2C%20Hadoop%2C%20Redis%2C%20Cassandra%2C%20Elasticsearch%2C%20Solr%2C%20MySQL%2C%20Linux%2C%20HBase%2C%20MongoDB%20etc%29) makes available tools for Kubernetes, MongoDB, Postgres, RabbitMQ and Redis. 
@@ -117,12 +121,24 @@ Features:
 Reliability:
   
   The Prometheus [documentaion](https://prometheus.io/docs/introduction/overview/) details that "*Prometheus is designed for reliability*", additionally it states that prometheus can be relied on when other parts of your infrastructure is down. The reliance of organisations such as [Uber](https://www.uber.com/), [Slack](https://slack.com/) [Robinhood](https://robinhood.com/us/en/) and the popularity on [github](#gitpop) are indicators that prometheus is a reliable monitoring tool.
+  
+<a name="table1"/>
+
+|             | Icinga      |Zabbix       |Nagios        |Prometheus         |
+| ------------|:-----------:|------------:|-------------:|------------------:|
+| Forks       | 480         |440          |340           |5.6k               |
+| Stars       | 1.5k        |1.4k         |919           |35.1k              |
+| Contributors| 240         |8            |52            |560                |
+
+**Table: 1** Showing github popularity for the open soure monitoring tools. Prometheus is the favoured tool.
 
 
 <a name="saas"/>
+
 ## SaaS Tools
 
 <a name="newrelic"/>
+
 ### New Relic
 
 New Relic is described as an all in one, full stack perfomance monitoring system capable of producing metrics that can elucidate the users experience.
@@ -176,28 +192,69 @@ Reliability:
 
   It is very reliable for alerting because of the variety of alert tools it has including [multiple-alerting-channels](https://www.atlassian.com/software/opsgenie/it-alerting#multiple-alerting-channels) and the ability to escalate alerts. If a team-member that is on-call is alerted through a text or a slack ping and they don't respond OspGenie can call them. If they do not pick-up, an escaltion is carried ou depending on the configuration. A call can be made to the next person inline or the entire is alerted. Opsgeneie also reduces noise from alerts by assigning priority.
 
-<a name="keymetrics"/>
+<a name="table2"/>
 
-## Key Metrics
-Key metrics for Kubernetes monitoring:
-Key metrics for RabbitMQ monitoring:
+|             | New Relic             |Google Stackdrive      |Opsgenie                |
+| ------------|:---------------------:|----------------------:|-----------------------:|
+| Stacks      |17.5k                  |275                    |171                     |
+| Followers   |5.7K                   |275                    |161                     |
+| Votes       |1.9K                   |65                     |23                      |
+
+**Table: 2** Showing popularity based on [Stakeshare](https://stackshare.io/stackups/stackdriver-vs-new-relic-vs-opsgenie) for the SaaS monitoring tools. New relic is the popular tool in this category.
+
 
 <a name="conclusion"/>
 
 ## Conclusion
 
+Zabbix, Icinga and Nagios have the necessary features and addons/extension to make them useful for Kubeneters monitoring. These tools were developed ealier than prometheus but they are mantained by very small communities in comparison [see table 1](#table1). This is not are bad thing but it does indicate the level of interest in these tools in the Kubernetes community. More popular projects usually mean more contributors and that can translate to more people who understand the code thus, when there are issues, the are more people to help with troubleshooting and chances are that someone in the community would have had the same issue at some point.
 
-|             | Icinga                |Zabbix                 |Prometheus              |New Relic               |Google Cloud Stackdriver|Opsgenie             |
-| ------------|:---------------------:|----------------------:|-----------------------:|:----------------------:|-----------------------:|--------------------:|
-| Ease of Use | right-aligned | $1600 |                       |                        |                        |                        |                     |
-| Features    | centered      |   $12 |                       |                        |                        |                        |                     |
-| Reliability | are neat      |    $1 |                       |                        |                        |                        |                     |
-| Reliability | are neat      |    $1 |                       |                        |                        |                        |                     |
+Although New Relic can produce some interesting metrics driven by their data analysis processes, I believe the same data can be made available through prometheus using [PromQL](https://prometheus.io/docs/prometheus/latest/querying/basics/). Google Cloud's operations suite also offers similar data analytics driven solutions for perfomance and it also offers seemless integration with GCP APIs but RabbitMQ, MongoDB and Postgres require a [3rd part](https://docs.bindplane.bluemedora.com/docs/bindplane-sources) addon and the more resources you use the more you pay.
+
+Due the reason I mentioned above, the cost and ease of use and and the [popularity](table1), I select Prometheus as a monitoirng tool. Additonally, Kubernetes and Prometheus are both members of the CNCF. Kubenetes components export metrics in Prometheus format, there are exporters available for all the systems in the stack and Prometheus is not platform dependent. It pulls instead of pushing which allows for monoting during development and  I can inspect the metrics endpoint manually or with other tools. Overall Prometheus is open source, offers an extensive amount of significant features, native intergation with Kubernetes, can potentially be configured to acquire some of the metrics made avaivable in paid services and has a bid enough community to help with troubleshooting.
 
 
-Icinga and Nagios have the necessary features and addons/extension to make them useful for Kubeneters monitoring. These tools are developed and mantained by very small communities and this is not are bad thing but it does indicate the level of interest in these tools in the Kubernetes community. More popular projects usually mean more contributors and that can translate to more people who understand the code thus, when there are issues the are more people to help with troubleshooting and chances are that someone in the community would have had the same issue at some point.
+<a name="keymetrics"/>
 
-Although new relic has some interesting processes that come from data analysis, I believe the same data can be made available through prometheus using [PromQL](https://prometheus.io/docs/prometheus/latest/querying/basics/). Google Cloud's operations suite also offers similar data analytics driven solutions for perfomance and it also offers seemless integration with GCP APIs but RabbitMQ, MongoDB and Postgres require a 3rd part addon and the more resources you use the more you pay.
+## Key Metrics to Monitor
 
-I would select Prometheus as a monitoirng tool. Kubernetes and Prometheus are both members of the CNCF. Kubenetes components export metrics in Prometheus format, there are exporters available for all the systems in the stack. It is not platform dependent and uses . It pulls instead of pushing which allows mpnoting during development and inspect metrics endpoint manually or with other tools. 
+Key metrics for **Kubernetes** monitoring:
+  - Running Pods and Deployments
+  - Resource Metrics (CPU, Memory and Disk I/O)
+  - Container Native Metrics (Container Health)
+  - Applications Metrics
+  - Ready (Node ready for Pods)
+  - MemoryPressure
+  - DiskPressure
+  - NetworkUnavailable
 
+RabbitMQ, MongoDB and Postgres may also need infrastructure Monitoring (CPU, Memory, Disk I/O and Network Throughput...), only the application specific metrics are added below.
+
+Key metrics for **RabbitMQ** monitoring:
+  - Exchange perfomance
+  - Connection
+  - Queue Perfomance (Message publish/delivery rate)
+  
+Key metrics for **Redis** monitoring:
+  - Client and connection Statistics
+  - Persistence Statistics 
+  - Operation Statistics
+  - Keyspace Statistics
+  - Replication Details
+  - Expired Key Statistics
+  
+Key metrics for **MongoDB** monitoring:
+  - Database Connections
+  - Disk Utilization
+  - Replica State 
+  - Locking State
+  
+Key metrics for **Postgres** monitoring:
+  - Responce Time
+  - Active Sessions
+  - Disk Usage
+  - Locks
+  - Transaction Details
+  - Read Query Throughput
+  - Write Query Throughput
+  - Replication
