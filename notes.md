@@ -20,11 +20,8 @@ SaaS
 
 mine
 
-    riemann
-    heka,
-    bosun
-    prometheus + sysdig 
-    open census
+    heapster
+    datadog
 
 
 ----------------------------------------------------------
@@ -43,6 +40,7 @@ https://usersnap.com/blog/top-saas-monitoring-tools-devops/
 open source monitoring
 https://www.unixmen.com/list-free-open-source-monitoring-system/
 
+https://medium.com/containerum/4-tools-to-monitor-your-kubernetes-cluster-efficiently-ceaf62818eea
 
 In recent years, monitoring has undergone a Cambrian Explosion: Riemann, Heka, Bosun, and Prometheus have emerged as open source tools that are very similar to Borgmon’s time-series–based alerting.
 

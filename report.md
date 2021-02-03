@@ -17,11 +17,42 @@ Depending on the requirements of the project one can choose between self-hosted 
 
 The main difference between them is cost. Self-hosted solutions are usually open source, but that doesn't mean they are free, they come at a cost. Not only the cost of hosting them, but as well the cost of time one has to invest in set-ups in an ongoing bases, specially when such set ups are made up of multiple tools. 
 
-SaaS solutions, in the other hand, usually offer an array of prodcuts that claim will help engineers without the overhead of configuration. That doesn't mean the don't need to be configured, but probably the time spent in those configurations are less than in a self-hosted one. Of course, they cost money, but depending on the situation, they can be useful if the team wants to get up and running with monitoring but doesn't have much spare capacity.
+SaaS solutions, in the other hand, usually offer an array of built-in features that help engineers get the data they need without the overhead of configuration. That doesn't mean the don't need to be configured, but probably the time spent in those configurations are less than in a self-hosted one. Of course, they cost money, but depending on the situation, they can be useful if the team wants to get up and running with monitoring but doesn't have much spare capacity for setting them up.
+
+## Requirements
+
+For this project, there are specific requirements for the solutions to integrate with other services: Postgres, Redis, RabbitMQ and MongoDB. As well as the strength, easeness, and reliability to integrate with Kubernetes and GCP.  
+
+These requirements will have a great influence in the selection of the recommended solution.
+
+Another factors like budget allocated to the project or the size of the actual cluster to monitor were excluded from the requirements but will be discussed as well in each of the sections.
+
+## Self-Hosted Solutions
 
 
+### Prometheus
 
 
+### Heapster
 
+
+### Icinga
+
+
+### Zabbix
+
+
+## SaaS
+
+### New Relic
+
+
+### Google Cloud Stackdriver
+
+
+### DataDog
+
+
+### Opsgenie
 
 
