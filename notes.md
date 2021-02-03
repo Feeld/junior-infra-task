@@ -4,6 +4,7 @@ Evaluate options for monitoring system.
 - consider strength, ease reliability
 - easiness to work with K8 and GCP
 - postgres, redis, rabbitMQ, mongoDB
+- budget - is there one for this project?
 
 Self-hosted
 
@@ -23,6 +24,7 @@ mine
     heka,
     bosun
     prometheus + sysdig 
+    open census
 
 
 ----------------------------------------------------------
@@ -89,11 +91,28 @@ New relic
 [font](https://newrelic.com/platform/kubernetes/monitoring-guide)
 
 pros: Able to see the dashboard (kubernetes cluster explorer) with the kubernetes integration. no need to integrate with other service like kibana or grafana
-    automatically deployed agent to pods/nodes???
+    automatically deployed agent to pods
     access to k8 events
     troubleshoot without the need of switching tools
     integrates with postgres, redis, rabbitMQ, mongoDB
 
+cons: cost $$$$
+      adds complexity to the cluster as it needs new relic infrastructure and responsability to send logs to NR
+
+
+Google Cloud StackDriver
+
+[font](https://cloud.google.com/stackdriver/docs/solutions/gke)
+
+[font](https://www.youtube.com/watch?v=lwBBAvPxO9c)
+
+  stackdriver service monitoring
+
+ we can set up the cluster 
+
+pros: already within the GCP stack
+      Alerts can integrate with prometheus. export the metrics from prometheus and and stackdriver will collect those in the back end 
+      
 cons: cost $$$$
 
 
@@ -101,7 +120,9 @@ cons: cost $$$$
 
  possible questions to dave
 
- what are we really trying to achieve with the monitoring? Cluster resource usage, Node availability and health, Application availability and performance?'
+ what are we really trying to achieve with the monitoring? What do we want to measure? Latency, Saturation, Traffic, Errors??
+ 
+ Cluster resource usage, Node availability and health, Application availability and performance?'
 
  do we use already a tool like grafana o kibana to look at metrics in other services?
 
@@ -112,3 +133,7 @@ cons: cost $$$$
  how many services do we run on average? is there a big change in the number depending on the day of the week?
 
  do we need to scale up and down those services?
+
+ is there a budget for this process?
+
+ what is the GKE version we using?
