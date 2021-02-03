@@ -30,12 +30,18 @@ mine
 ----------------------------------------------------------
 
 ideas to write document
-
- “We need monitoring systems that allow us to alert for high-level service objectives, but retain the granularity to inspect individual components as needed.” 
+<!-- 
+ “We need monitoring systems that allow us to alert for high-level service objectives, but retain the granularity to inspect individual components as needed.”  -->
  
  
-Monitoring enables service owners to make rational decisions about the impact of changes to the service, apply the scientific method to incident response, and of course ensure their reason for existence: to measure the service’s alignment with business goals
+<!-- Monitoring enables service owners to make rational decisions about the impact of changes to the service, apply the scientific method to incident response, and of course ensure their reason for existence: to measure the service’s alignment with business goals -->
 
+
+monitoring tools for devops
+https://usersnap.com/blog/top-saas-monitoring-tools-devops/
+
+open source monitoring
+https://www.unixmen.com/list-free-open-source-monitoring-system/
 
 
 In recent years, monitoring has undergone a Cambrian Explosion: Riemann, Heka, Bosun, and Prometheus have emerged as open source tools that are very similar to Borgmon’s time-series–based alerting.
@@ -81,6 +87,7 @@ pros: reliable
       monitor of K8s cluster node resources out of the box
       prometheus components available as docker images
       can be easily deployed in container environment
+      integrates with postgres, redis, rabbitMQ, mongoDB
 
 cons: difficult to scale. Might need several prometheus servers to collect all the metrics if the applications grows. 
 
@@ -90,7 +97,7 @@ New relic
 
 [font](https://newrelic.com/platform/kubernetes/monitoring-guide)
 
-pros: Able to see the dashboard (kubernetes cluster explorer) with the kubernetes integration. no need to integrate with other service like kibana or grafana
+pros: Able to see the dashboard (kubernetes cluster explorer) with the kubernetes integration. 
     automatically deployed agent to pods
     access to k8 events
     troubleshoot without the need of switching tools
