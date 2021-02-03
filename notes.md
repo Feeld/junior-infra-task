@@ -61,6 +61,8 @@ While it’s really easy to start monitoring Kubernetes with Prometheus, DevOps 
 
 
  New Relic uses a centralize platform collection apps and servers push to. Can create a high load of traffic and actually the monitoring can create a bottleneck if we have many microservices sending information to it. also there is the requirement of installing additional software in each of the microservices to send that data to the centralize collection platform.
+
+ prometheus
  
  prometheus requires only a scraping endpoint, this way metrics can be pulled from several prometheus instances.
  Also pulling its a better way of identifying the health of the service as if the endpoint is not available it's pretty clear the service is not healthy, but if the service doesnt push notifications the reasons might vary and is not as clear its health status. network not working, package got lost etc.
@@ -82,7 +84,17 @@ cons: difficult to scale. Might need several prometheus servers to collect all t
 
 In the other hand, this shortage in the numers of metrics collected can be seen as a good point as it forces administrator to think throughfully and narrow down the metrics that are needed for monitoring without just setting metrics that will serve no purpose. 
 
+New relic
 
+[font](https://newrelic.com/platform/kubernetes/monitoring-guide)
+
+pros: Able to see the dashboard (kubernetes cluster explorer) with the kubernetes integration. no need to integrate with other service like kibana or grafana
+    automatically deployed agent to pods/nodes???
+    access to k8 events
+    troubleshoot without the need of switching tools
+    integrates with postgres, redis, rabbitMQ, mongoDB
+
+cons: cost $$$$
 
 
 -----------------------------------------------------------------------
@@ -96,3 +108,7 @@ In the other hand, this shortage in the numers of metrics collected can be seen 
  what the average age of feeld containers?
 
  how many containers are we running in a regular day? is that consider a lot for a prometheus server?
+
+ how many services do we run on average? is there a big change in the number depending on the day of the week?
+
+ do we need to scale up and down those services?
