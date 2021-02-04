@@ -30,5 +30,14 @@ kubectl create -f manifests/
 
 ### Access the dashboards
 
-![img](./img/prometheus-ui.png)
+#### Prometheus
 
+![prometheus](./img/prometheus-ui.png)
+
+#### Alert Manager
+
+![alert](./img/prometheus-alertmanager.png)
+
+#### Grafana
+
+![grafana](./img/prometheus-grafana.png)
