@@ -103,7 +103,7 @@ pros: Able to see the dashboard (kubernetes cluster explorer) with the kubernete
     integrates with postgres, redis, rabbitMQ, mongoDB
 
 cons: cost $$$$
-      adds complexity to the cluster as it needs new relic infrastructure and responsability to send logs to NR
+      adds loads to the cluster as it needs new relic infrastructure to send logs. Can create bottle necks.
 
 
 Google Cloud StackDriver

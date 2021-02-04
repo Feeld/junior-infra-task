@@ -10,7 +10,6 @@ The main goal of our monitoring system will be to enable us to make rational dec
 
 In the microservice world, we need monitoring systems that allow us to alert for high-level services objectives, but retain the granularity to inspect individual components as needed.
 
-
 ## Self-Hosted or SaaS?
 
 Depending on the requirements of the project one can choose between self-hosted and SaaS monitoring solutions. 
@@ -25,10 +24,9 @@ For this project, there are specific requirements for the solutions to integrate
 
 These requirements will have a great influence in the selection of the recommended solution.
 
-Another factors like budget allocated to the project or the size of the actual cluster to monitor were excluded from the requirements but will be discussed as well in each of the sections.
+Another factors like budget allocated to the project or the size of the actual cluster to monitor were excluded from the requirements but will be included in the final decision. 
 
 ## Self-Hosted Solutions
-
 
 ### Prometheus - https://prometheus.io/
 
@@ -80,6 +78,8 @@ Zabbix is designed to monitor a large number of network parameters and the healt
 
 **PROS**
 
+* Enables you to regularly scan the network for external services or Zabbix agents and take pre-defined actions upon discovery.
+* Real-time visualization.
 
 **CONS**
 * Does not integrate easily with Kubernetes
@@ -88,19 +88,48 @@ Zabbix is designed to monitor a large number of network parameters and the healt
 ### Others
 
 Another tools that were taking into account for this report were Grafana, cAdvisor and FluentD but all of them are related to Prometheus in one way or another. 
-cAdvisor, developed by Google, is a tool to analyze mainly individual containers, so it's missing the reporting capabilities that we need on pods, nodes and other Kubernetes capabilities.
-Grafana expands the graphing capabilities of Prometheus and usually is used in conjuntion with it. It can read promQL, the quesy language prometheus uses to send data.
+cAdvisor, developed by Google, is a tool to analyze mainly individual containers, so it's missing the monitoring capabilities that we need on pods, nodes and other Kubernetes features.
+Grafana expands the graphic capabilities of Prometheus and usually is used in conjuntion with it. It can read promQL, the quesy language prometheus uses to send data.
 Systemd can also integrate with Prometheus monitoring. 
 
 ## SaaS
 
 ### New Relic - https://newrelic.com/
 
+New Relic is a web application performance service designed to work in real-time with your live web app. New Relic Infrastructure provides flexible, dynamic server monitoring.
 
+In addition to providing visibility into operational data it also has the ability to see the relationships between objects in a cluster using Kubernetes’ built-in labeling system.
 
+It integrates with GKE and it has a multi-dimensional representation of a Kubernetes cluster from which you can explore your namespaces, deployments, nodes, pods, containers, and applications.
+
+**PROS**
+
+* Able to see the dashboard (kubernetes cluster explorer) with the kubernetes integration. 
+* Automatically deployed agent to pods
+* Access to kubernetes events
+* Troubleshoot without the need of switching tools
+* Integrates with Postgres, Redis, RabbitMQ and MongoDB as well as other [tools](https://newrelic.com/integrations).
+
+**CONS**
+
+* Cost $$$$ and it can add up quicly depending on the size of the service.
+* It can add load to the cluster as it needs new relic infrastructure to send logs, potentially creating bottle necks.
 
 ### Google Cloud Stackdriver
 
+Monitor, troubleshoot, and improve application performance on your Google Cloud environment.
+
+**PROS**
+
+* Already within the GCP stack.
+* Integrates with GKE
+* It can be integrated with Prometheus.
+* Exported metrics from prometheus can be collected in the back end. 
+* Paid for storage only.
+
+**CONS**
+
+* Cost $$$$ but it includes all product features for free. Only paying for storage.
 
 ### DataDog
 
