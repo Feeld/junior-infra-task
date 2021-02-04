@@ -90,6 +90,9 @@ pros: reliable
 cons: difficult to scale. Might need several prometheus servers to collect all the metrics if the applications grows. 
       step learning curve for configurations
 
+
+      Can be complex to manage when set up with an operator because it becomesquite monolithic. this callenge can be solved by deploying diferrent config maps for each namespace.
+
 In the other hand, this shortage in the numers of metrics collected can be seen as a good point as it forces administrator to think throughfully and narrow down the metrics that are needed for monitoring without just setting metrics that will serve no purpose. 
 
 New relic
