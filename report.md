@@ -2,16 +2,16 @@
 
 This document is an evaluation of the different solutions available in the market to monitor our Kubernetes cluster.
 
-One of the main differences, in terms of monitoring, between monolithic infrastructure and kubernetes, is its difficulty of monotoring. Before microservices, the monitoring of infrastructure was more straight forward. With Kubernetes, the amount of containers created and destroyed, the number of nodes, services deployed within a cluster, the communication between these services and so on, adds a load of complexity into the monitoring system. 
+Kubernetes allows for better development experience but the amount of containers created and destroyed, the number of nodes, services deployed within a cluster, the communication between these services and so on, adds complexity into the monitoring system. 
 
-The monitoring systems that served us well before, cannot keep up with the explosion of metrics that these new services entails. The recommended solution in this report, will have to address this complexity in a way that it makes it easier for engineers to manage and understand what is going on in the system as well as helping in the troubleshooting process.
+This explosion of metrics will have to be addressed by the recommended tool in a way that it makes it easier for engineers to manage and understand what is going on in the system as well as helping in the troubleshooting process.
 
-The main goal of our monitoring system will be to enable us to make rational decisions based in data, to respond to incidents and to align the service with our business objectives.
+The main goal of our monitoring system will be to enable us to make rational decisions based in data, to respond to incidents and to align the service with our business objectives. 
 
 In the microservice world, we need monitoring systems that allow us to alert for high-level services objectives, but retain the granularity to inspect individual components as needed.
 
 
-## self-hosted or SaaS?
+## Self-Hosted or SaaS?
 
 Depending on the requirements of the project one can choose between self-hosted and SaaS monitoring solutions. 
 
@@ -30,17 +30,42 @@ Another factors like budget allocated to the project or the size of the actual c
 ## Self-Hosted Solutions
 
 
-### Prometheus
+### Prometheus - https://prometheus.io/
+
+Prometheus is an open source monitoring and alerting toolkit initially built at Soundcloud. In 2016, joined the Cloud Native Computing Fundation as the second hosted project, after Kubernetes.
+
+Prometheus is a pull-based system. It sends a scrape request based on the configuration defined in the deployment file. The response to this scrape request is stored and parsed in storage along with the metrics for the scrape itself.
+
+The storage is a custom database on the Prometheus server and can handle a massive influx of data. 
+
+Prometheus requires only a scraping endpoint, this way metrics can be pulled from several prometheus instances.
+
+Also pulling its a better way of identifying the health of the service because if the endpoint is not available it's pretty clear the service is not healthy, but if the service doesnt push notifications the reasons might vary and is not as clear its health status. 
+
+If unable to monitor if the container is short lived with the pull endpoint. For that prometheus uses a push gateway notification
+
+**PROS**
+
+* Reliable stand alond and self cotain. It works even if part of the infrastructure is down.
+* No extensive set up needed, great community support, low complexity.
+* Monitor of Kubernetes cluster node resources out of the box.
+* Components available as docker images. Can be easily deployed in container environment
+* Integrates with Postgres, Redis, RabbitMQ and MongoDB as well as other [tools](https://prometheus.io/docs/instrumenting/exporters/)
+
+**CONS**
+
+* Difficult to scale. Might need several prometheus servers to collect all the metrics if the applications grows after a certain threshold.
+* Step learning curve into how to correctly configure it. As learning promQL, the query language needed to query database of metrics to end up creating Grifana dashboards
 
 
-### Heapster
+### Icinga - https://icinga.com/
 
 
-### Icinga
+### Zabbix - https://www.zabbix.com/
 
+### Others
 
-### Zabbix
-
+Another tools that were taking into account for this report were Grafana, cAdvisor and FluentD. 
 
 ## SaaS
 

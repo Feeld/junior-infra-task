@@ -1,7 +1,7 @@
 Evaluate options for monitoring system.
 
 - difference between self hosted and SaaS
-- consider strength, ease reliability
+- consider strength, ease, reliability
 - easiness to work with K8 and GCP
 - postgres, redis, rabbitMQ, mongoDB
 - budget - is there one for this project?
@@ -88,6 +88,7 @@ pros: reliable
       integrates with postgres, redis, rabbitMQ, mongoDB
 
 cons: difficult to scale. Might need several prometheus servers to collect all the metrics if the applications grows. 
+      step learning curve for configurations
 
 In the other hand, this shortage in the numers of metrics collected can be seen as a good point as it forces administrator to think throughfully and narrow down the metrics that are needed for monitoring without just setting metrics that will serve no purpose. 
 
@@ -142,3 +143,14 @@ cons: cost $$$$
  is there a budget for this process?
 
  what is the GKE version we using?
+
+
+
+
+ -------------------------------------
+
+ resources for second part of the task
+
+
+tutorial on how to set up prometheus in kubernetes
+ https://phoenixnap.com/kb/prometheus-kubernetes-monitoring
