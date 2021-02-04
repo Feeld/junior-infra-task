@@ -60,16 +60,43 @@ If unable to monitor if the container is short lived with the pull endpoint. For
 
 ### Icinga - https://icinga.com/
 
+Icinga is a monitoring system which checks the availability of your network resources, notifies users of outages, and generates performance data for reporting.
+
+Scalable and extensible, Icinga can monitor large, complex environments across multiple locations.
+
+It has a pluging to connect it to Kubernetes but doesn't seem its used much as it only has 5 downloads. So it would not make it an ideal candidate for our purpose. 
+
+
+**PROS**
+
+
+**CONS**
+* Does not integrate easily with Kubernetes
+
 
 ### Zabbix - https://www.zabbix.com/
 
+Zabbix is designed to monitor a large number of network parameters and the health of servers, offering many data visualization and reporting features based on the stored data. Small organizations with a few servers and large enterprises with multiple servers can use Zabbix to monitor IT infrastructure.
+
+**PROS**
+
+
+**CONS**
+* Does not integrate easily with Kubernetes
+
+
 ### Others
 
-Another tools that were taking into account for this report were Grafana, cAdvisor and FluentD. 
+Another tools that were taking into account for this report were Grafana, cAdvisor and FluentD but all of them are related to Prometheus in one way or another. 
+cAdvisor, developed by Google, is a tool to analyze mainly individual containers, so it's missing the reporting capabilities that we need on pods, nodes and other Kubernetes capabilities.
+Grafana expands the graphing capabilities of Prometheus and usually is used in conjuntion with it. It can read promQL, the quesy language prometheus uses to send data.
+Systemd can also integrate with Prometheus monitoring. 
 
 ## SaaS
 
-### New Relic
+### New Relic - https://newrelic.com/
+
+
 
 
 ### Google Cloud Stackdriver
