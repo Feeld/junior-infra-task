@@ -115,7 +115,7 @@ It integrates with GKE and it has a multi-dimensional representation of a Kubern
 * Cost $$$$ and it can add up quicly depending on the size of the service.
 * It can add load to the cluster as it needs new relic infrastructure to send logs, potentially creating bottle necks.
 
-### Google Cloud Stackdriver
+### Google Cloud Stackdriver - https://cloud.google.com/stackdriver/docs
 
 Monitor, troubleshoot, and improve application performance on your Google Cloud environment.
 
@@ -131,9 +131,25 @@ Monitor, troubleshoot, and improve application performance on your Google Cloud 
 
 * Cost $$$$ but it includes all product features for free. Only paying for storage.
 
-### DataDog
+### DataDog - https://www.datadoghq.com/
 
+Datadog gives you deep visibility into Kubernetes clusters, with minimal setup. You can deploy the Datadog Agent on every node in your cluster using the DaemonSet or Datadog Operator to start collecting metrics.
 
-### Opsgenie
+**PROS**
 
+* Quick configuration
+* More than 400 integrations [see here](https://docs.datadoghq.com/integrations/)
 
+**CONS**
+
+### Opsgenie - https://www.atlassian.com/software/opsgenie
+
+OpsGenie provides alert and notification management as a service including on-call scheduling and escalation capabilities. It has a simple and flexible mail integration as well as a RESTful API allows almost every tool to integrate with it.
+
+**PROS**
+
+* Integrates with Prometheus
+
+**CONS**
+
+* Cost $$$$
