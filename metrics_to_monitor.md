@@ -1,5 +1,14 @@
 # Metrics to monitor by service
 
+### HTTP API
+
+* Uptime
+* CPU Usage
+* Memory Usage
+* Request per minute
+* Average Max Latency
+* Errors per minute
+
 ### MongoDB
 
 * Replication lag
@@ -34,4 +43,3 @@
 * TCP connections by state
 * Network throughput
 * Network latency
-
