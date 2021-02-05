@@ -151,6 +151,8 @@ It also supports multi-cloud environments, which is an advantage for our project
 
 ![datadog-logo](https://global-uploads.webflow.com/5defb8273d0a4ce99a0af8ee/5e326c0ea21b61e649e25812_Datadog.jpg)
 
+<img src="https://global-uploads.webflow.com/5defb8273d0a4ce99a0af8ee/5e326c0ea21b61e649e25812_Datadog.jpg" width="100">
+
 Datadog is monitoring service for cloud-scale applications, providing monitoring of servers, databases, tools, and services, through a data analytics platform.
 
 It gives you deep visibility into Kubernetes clusters, with minimal setup. You can deploy the Datadog Agent on every node in your cluster using the DaemonSet or Datadog Operator to start collecting metrics.
