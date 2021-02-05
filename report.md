@@ -149,7 +149,7 @@ It also supports multi-cloud environments, which is an advantage for our project
 
 ### DataDog - https://www.datadoghq.com/
 
-![datadog-logo](https://www.google.com/imgres?imgurl=https%3A%2F%2Fnakedsecurity.sophos.com%2Fwp-content%2Fuploads%2Fsites%2F2%2F2016%2F07%2Fdd.png%3Fw%3D780%26h%3D408%26crop%3D1&imgrefurl=https%3A%2F%2Fnakedsecurity.sophos.com%2F2016%2F07%2F11%2Fdatadog-bitten-by-data-breach-kills-all-passwords%2F&tbnid=GkCF2cHbuJ_n3M&vet=10CBMQxiAoBmoXChMImLSc59TT7gIVAAAAAB0AAAAAEAc..i&docid=f4IHkklMEiQieM&w=780&h=408&itg=1&q=datadog%20images&client=firefox-b-d&ved=0CBMQxiAoBmoXChMImLSc59TT7gIVAAAAAB0AAAAAEAc)
+![datadog-logo](https://global-uploads.webflow.com/5defb8273d0a4ce99a0af8ee/5e326c0ea21b61e649e25812_Datadog.jpg)
 
 Datadog is monitoring service for cloud-scale applications, providing monitoring of servers, databases, tools, and services, through a data analytics platform.
 
