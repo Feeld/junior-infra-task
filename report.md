@@ -121,45 +121,54 @@ It integrates with GKE and it has a multi-dimensional representation of a Kubern
 **PROS**
 
 * Able to see the dashboard (kubernetes cluster explorer) with the kubernetes integration. 
-* Automatically deployed agent to pods
-* Access to kubernetes events
-* Troubleshoot without the need of switching tools
+* Automatically deployed agent to pods and access to kubernetes events.
+* Troubleshoot without the need of switching tools.
 * Integrates with Postgres, Redis, RabbitMQ and MongoDB as well as other [tools](https://newrelic.com/integrations).
+* Real time reports.
 
 **CONS**
 
 * Cost $$$$ and it can add up quicly depending on the size of the service.
 * It can add load to the cluster as it needs new relic infrastructure to send logs, potentially creating bottle necks.
+* Interface can get a little tricky because of huge amount of options.
 
 ### Google Cloud Stackdriver - https://cloud.google.com/stackdriver/docs
 
-Monitor, troubleshoot, and improve application performance on your Google Cloud environment.
+Google Cloud Operation , formerly Stackdriver's, focus in improving the performance and availability of large, complex applications running in the public cloud. It provides metrics detailing every layer of the 'stack' in the form of charts and graphs. 
+
+It also supports multi-cloud environments, which is an advantage for our project, and provides a single information panel into users' cloud services. It provides views into the logs that are generated, and allows users to generate metrics from those logs as well as allowing users to receive alerts when metrics breach normal levels.
 
 **PROS**
 
 * Already within the GCP stack.
-* Integrates with GKE
-* It can be integrated with Prometheus.
-* Exported metrics from Prometheus can be collected in the back end. 
+* Integrates with GKE and Prometheus.
+* Log alerts can be set for any string which occurred in logs and get alerts on mail, slack.
+* Ease creation of metrics to understand performance.
+* Good documentation on integration APIs
 * Paid for storage only.
+
 
 **CONS**
 
 * Cost $$$$ but it includes all product features for free. Only paying for storage.
+* Default logs are available only for 30 days.
+* Can be slow for searching and filtering the logs.
 
 ### DataDog - https://www.datadoghq.com/
 
-Datadog gives you deep visibility into Kubernetes clusters, with minimal setup. You can deploy the Datadog Agent on every node in your cluster using the DaemonSet or Datadog Operator to start collecting metrics.
+Datadog is monitoring service for cloud-scale applications, providing monitoring of servers, databases, tools, and services, through a data analytics platform.
+
+It gives you deep visibility into Kubernetes clusters, with minimal setup. You can deploy the Datadog Agent on every node in your cluster using the DaemonSet or Datadog Operator to start collecting metrics.
 
 **PROS**
 
 * Quick configuration to start using the platform.
 * More than 400 integrations [see here](https://docs.datadoghq.com/integrations/)
-* 
+* Excells in troubleshouting complex systems. Can identify bugs with pinpoint accuracy. 
 
 **CONS**
 
-* Cosrt $$$$.
+* Cost $$$$.
 * Lasks deeper application-level insight that New Relic offers.
 
 
@@ -169,8 +178,14 @@ OpsGenie provides alert and notification management as a service including on-ca
 
 **PROS**
 
-* Integrates with Prometheus
+* Their alarm and notification system.
+* Integration with other tools.
 
 **CONS**
 
 * Cost $$$$
+* Not the best option for monitoring, but rather for alarms and notifications.
+
+## Analysis and Recommendation
+
+This report analyzes one of the best tools for monitoring that there are, all of them are good, the aim of this report is to find the best one for our purposes. 
