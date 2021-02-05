@@ -2,7 +2,7 @@
 
 This document is an evaluation of the different solutions available in the market to monitor our Kubernetes cluster.
 
-Kubernetes allows for better development experience but the amount of containers created and destroyed, the number of nodes, services deployed within a cluster, the communication between these services and so on, adds complexity into the monitoring system. 
+Kubernetes allows for better development experience but the amount of containers created and destroyed, the number of nodes, pods, services deployed within a cluster and the communication between these services, it adds complexity into the monitoring system. 
 
 This explosion of metrics will have to be addressed by the recommended tool in a way that it makes it easier for engineers to manage and understand what is going on in the system as well as helping in the troubleshooting process.
 
@@ -24,7 +24,7 @@ For this project, there are specific requirements for the solutions to integrate
 
 These requirements will have a great influence in the selection of the recommended solution.
 
-Another factors like budget allocated to the project or the size of the actual cluster to monitor were excluded from the requirements but will be included in the final decision. 
+Another factors like budget allocated to the project or the size of the actual cluster to monitor were excluded from the requirements I believe they play a part as well in the final decision so they will be included in the analysis. 
 
 ## Self-Hosted Solutions
 
@@ -32,7 +32,7 @@ Another factors like budget allocated to the project or the size of the actual c
 
 Prometheus is an open source monitoring and alerting toolkit initially built at Soundcloud. In 2016, joined the Cloud Native Computing Fundation as the second hosted project, after Kubernetes.
 
-Prometheus is a pull-based system. It sends a scrape request based on the configuration defined in the deployment file. The response to this scrape request is stored and parsed in storage along with the metrics for the scrape itself.
+Works in a pull-based system. It sends a scrape request based on the configuration defined in the deployment file. The response to this scrape request is stored and parsed in storage along with the metrics for the scrape itself.
 
 The storage is a custom database on the Prometheus server and can handle a massive influx of data. 
 
@@ -54,6 +54,8 @@ If unable to monitor if the container is short lived with the pull endpoint. For
 
 * Difficult to scale. Might need several prometheus servers to collect all the metrics if the applications grows after a certain threshold.
 * Step learning curve into how to correctly configure it. As learning promQL, the query language needed to query database of metrics to end up creating Grifana dashboards
+* Memory intensive. Can use fair amount of the memory when deployed within the cluster.
+* Own graphical interface is lacking. Need to integrate it with dashboard platform like Grifana.
 
 
 ### Icinga - https://icinga.com/
@@ -62,14 +64,19 @@ Icinga is a monitoring system which checks the availability of your network reso
 
 Scalable and extensible, Icinga can monitor large, complex environments across multiple locations.
 
-It has a pluging to connect it to Kubernetes but doesn't seem its used much as it only has 5 downloads. So it would not make it an ideal candidate for our purpose. 
+It has a pluging to connect it to Kubernetes but doesn't seem its used much. There seems to be another connectors as well but the ecosystem is not extensive developed.
 
 
 **PROS**
-
+* Provides data and alerts for availability, connectivity, and general health checks of your infrastructure.
+* It's fast. Quick notifications on system issues thanks to its multithreaded design.
+* Uses very similar plugings and add-ons to Nagios.
+* 3rd party integrations with MongoDB, Redis, RabbitMQ (Nagios), 
 
 **CONS**
-* Does not integrate easily with Kubernetes
+* Might need another tool to monitor Kubernetes cluster.
+* Although it has a focus in community, there is not a huge amount of info available on how to configure it.  
+* Mainly used for static infrastructure.
 
 
 ### Zabbix - https://www.zabbix.com/

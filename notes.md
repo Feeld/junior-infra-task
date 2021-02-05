@@ -157,3 +157,8 @@ cons: cost $$$$
 
 tutorial on how to set up prometheus in kubernetes
  https://phoenixnap.com/kb/prometheus-kubernetes-monitoring
+
+
+ https://docs.datadoghq.com/integrations/tls/?tab=containerized
+
+ https://prometheus.io/docs/guides/tls-encryption/
