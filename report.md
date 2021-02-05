@@ -26,9 +26,9 @@ Another factors like budget allocated to the project or the size of the actual c
 
 ## Self-Hosted Solutions
 
-### Icinga - https://icinga.com/
-
 <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Icinga_logo.svg" width="100">
+
+### Icinga - https://icinga.com/
 
 Icinga is a monitoring system which checks the availability of your network resources, notifies users of outages, and generates performance data for reporting.
 
@@ -49,10 +49,9 @@ It has a plugin to connect it to Kubernetes but doesn't seem it’s used much. T
 * Although it has a focus in community, there is not a huge amount of info available on how to configure it.  
 * Mainly used for static infrastructure.
 
+<img src="https://assets.zabbix.com/img/logo/zabbix_logo_500x131.png" width="100">
 
 ### Zabbix - https://www.zabbix.com/
-
-<img src="https://assets.zabbix.com/img/logo/zabbix_logo_500x131.png" width="100">
 
 Zabbix is designed to monitor a large number of network parameters and the health of servers, offering many data visualization and reporting features based on the stored data. 
 
@@ -74,9 +73,9 @@ It's capable of storing the data in an array of services. Visualization features
 * It can get difficult to configure.
 * Not detailed documentation. Difficult for first timers. 
 
-### Prometheus - https://prometheus.io/
-
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Prometheus_software_logo.svg/1200px-Prometheus_software_logo.svg.png" width="100">
+
+### Prometheus - https://prometheus.io/
 
 Prometheus is an open-source monitoring and alerting toolkit initially built at Soundcloud. In 2016, joined the Cloud Native Computing Foundation as the second hosted project, after Kubernetes.
 
@@ -111,9 +110,9 @@ Systemd can also integrate with Prometheus monitoring.
 
 ## SaaS
 
-### New Relic - https://newrelic.com/
+<img src="https://www.channelmarketerreport.com/wp-content/uploads/2020/05/NR_logo_Horizontal.png" width="100">
 
-<img src="https://www.clipartmax.com/png/middle/112-1128947_view-more-info-new-relic-new-relic-logo-png.png" width="100">
+### New Relic - https://newrelic.com/
 
 New Relic is a web application performance service designed to work in real-time with your live web app. New Relic Infrastructure provides flexible, dynamic server monitoring.
 
@@ -135,9 +134,9 @@ It integrates with GKE and it has a multi-dimensional representation of a Kubern
 * It can add load to the cluster as it needs new relic infrastructure to send logs, potentially creating bottle necks.
 * Interface can get a little tricky because of huge number of options.
 
-### Google Cloud Stackdriver - https://cloud.google.com/stackdriver/docs
-
 <img src="https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_0c51d2c2e5f85fe45126eb818f748267/google-cloud-operations-formerly-stackdriver.png" width="100">
+
+### Google Cloud Stackdriver - https://cloud.google.com/stackdriver/docs
 
 Google Cloud Operation, formerly Stackdriver's, focus in improving the performance and availability of large, complex applications running in the public cloud. It provides metrics detailing every layer of the 'stack' in the form of charts and graphs. 
 
@@ -157,9 +156,9 @@ It also supports multi-cloud environments, which is an advantage for our project
 * Default logs are available only for 30 days.
 * Can be slow for searching and filtering the logs.
 
-### DataDog - https://www.datadoghq.com/
-
 <img src="https://global-uploads.webflow.com/5defb8273d0a4ce99a0af8ee/5e326c0ea21b61e649e25812_Datadog.jpg" width="100">
+
+### DataDog - https://www.datadoghq.com/
 
 Datadog is monitoring service for cloud-scale applications, providing monitoring of servers, databases, tools, and services, through a data analytics platform.
 
@@ -176,10 +175,9 @@ It gives you deep visibility into Kubernetes clusters, with minimal setup. You c
 * Cost $$$$.
 * Lacks deeper application-level insight that New Relic offers.
 
+<img src="https://wac-cdn.atlassian.com/dam/jcr:ac951aa9-6d87-46e8-93d9-8af0ce5dc395/Opsgenie-blue-rgb.svg" width="100">
 
 ### Opsgenie - https://www.atlassian.com/software/opsgenie
-
-<img src="https://wac-cdn.atlassian.com/dam/jcr:ac951aa9-6d87-46e8-93d9-8af0ce5dc395/Opsgenie-blue-rgb.svg" width="100">
 
 OpsGenie provides alert and notification management as a service including on-call scheduling and escalation capabilities. It has a simple and flexible mail integration as well as a RESTful API allows almost every tool to integrate with it.
 
@@ -215,6 +213,6 @@ Of course, not everything about it is good about it. It can get difficult to sca
 
 To conclude, after taken into consideration all of the above, the analysis of the different tools, their pros and cons, I believe the best tool for our use case it's Prometheus. Not only is open source, but the support from the community and its active users can help us set get it up and running. I was able to do it following instructions in a git repo, not that I believe it would be as easy in a real-world project but still. 
 
-In addition, most of the items in the list of downsides can be fixed, like the graphical interface with Grafana or the scaling of the service by dividing it into several servers. Maybe it's a bit complicated at the beginning but I'm up for the challenge.
+In addition, most of the items in the list of downsides can be fixed, like the graphical interface with Grafana or the scaling of the service by dividing it into several servers. Maybe it's a bit complicated at the beginning but certainly can be done.
 
 In the microservice world, we need monitoring systems that allow us to alert for high-level services objectives but retain the granularity to inspect individual components as needed and I believe Prometheus is the one that can achieve this better for us.
