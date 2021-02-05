@@ -28,6 +28,8 @@ Another factors like budget allocated to the project or the size of the actual c
 
 ### Icinga - https://icinga.com/
 
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Icinga_logo.svg" width="100">
+
 Icinga is a monitoring system which checks the availability of your network resources, notifies users of outages, and generates performance data for reporting.
 
 Scalable and extensible, Icinga can monitor large, complex environments across multiple locations.
@@ -50,6 +52,8 @@ It has a plugin to connect it to Kubernetes but doesn't seem it’s used much. T
 
 ### Zabbix - https://www.zabbix.com/
 
+<img src="https://assets.zabbix.com/img/logo/zabbix_logo_500x131.png" width="100">
+
 Zabbix is designed to monitor a large number of network parameters and the health of servers, offering many data visualization and reporting features based on the stored data. 
 
 Both large and small organizations can use Zabbix to monitor IT infrastructure. It provides monitoring metrics, among others network utilization, CPU load and disk space consumption.
@@ -71,6 +75,8 @@ It's capable of storing the data in an array of services. Visualization features
 * Not detailed documentation. Difficult for first timers. 
 
 ### Prometheus - https://prometheus.io/
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Prometheus_software_logo.svg/1200px-Prometheus_software_logo.svg.png" width="100">
 
 Prometheus is an open-source monitoring and alerting toolkit initially built at Soundcloud. In 2016, joined the Cloud Native Computing Foundation as the second hosted project, after Kubernetes.
 
@@ -107,6 +113,8 @@ Systemd can also integrate with Prometheus monitoring.
 
 ### New Relic - https://newrelic.com/
 
+<img src="https://www.clipartmax.com/png/middle/112-1128947_view-more-info-new-relic-new-relic-logo-png.png" width="100">
+
 New Relic is a web application performance service designed to work in real-time with your live web app. New Relic Infrastructure provides flexible, dynamic server monitoring.
 
 In addition to providing visibility into operational data it could also see the relationships between objects in a cluster using Kubernetes’ built-in labelling system.
@@ -129,6 +137,8 @@ It integrates with GKE and it has a multi-dimensional representation of a Kubern
 
 ### Google Cloud Stackdriver - https://cloud.google.com/stackdriver/docs
 
+<img src="https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_0c51d2c2e5f85fe45126eb818f748267/google-cloud-operations-formerly-stackdriver.png" width="100">
+
 Google Cloud Operation, formerly Stackdriver's, focus in improving the performance and availability of large, complex applications running in the public cloud. It provides metrics detailing every layer of the 'stack' in the form of charts and graphs. 
 
 It also supports multi-cloud environments, which is an advantage for our project, and provides a single information panel into users' cloud services. It provides views into the logs that are generated and allows users to generate metrics from those logs as well as allowing users to receive alerts when metrics breach normal levels.
@@ -149,8 +159,6 @@ It also supports multi-cloud environments, which is an advantage for our project
 
 ### DataDog - https://www.datadoghq.com/
 
-![datadog-logo](https://global-uploads.webflow.com/5defb8273d0a4ce99a0af8ee/5e326c0ea21b61e649e25812_Datadog.jpg)
-
 <img src="https://global-uploads.webflow.com/5defb8273d0a4ce99a0af8ee/5e326c0ea21b61e649e25812_Datadog.jpg" width="100">
 
 Datadog is monitoring service for cloud-scale applications, providing monitoring of servers, databases, tools, and services, through a data analytics platform.
@@ -170,6 +178,8 @@ It gives you deep visibility into Kubernetes clusters, with minimal setup. You c
 
 
 ### Opsgenie - https://www.atlassian.com/software/opsgenie
+
+<img src="https://wac-cdn.atlassian.com/dam/jcr:ac951aa9-6d87-46e8-93d9-8af0ce5dc395/Opsgenie-blue-rgb.svg" width="100">
 
 OpsGenie provides alert and notification management as a service including on-call scheduling and escalation capabilities. It has a simple and flexible mail integration as well as a RESTful API allows almost every tool to integrate with it.
 
