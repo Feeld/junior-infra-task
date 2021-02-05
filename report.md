@@ -134,7 +134,7 @@ It integrates with GKE and it has a multi-dimensional representation of a Kubern
 
 ### Google Cloud Stackdriver - https://cloud.google.com/stackdriver/docs
 
-Google Cloud Operation , formerly Stackdriver's, focus in improving the performance and availability of large, complex applications running in the public cloud. It provides metrics detailing every layer of the 'stack' in the form of charts and graphs. 
+Google Cloud Operation, formerly Stackdriver's, focus in improving the performance and availability of large, complex applications running in the public cloud. It provides metrics detailing every layer of the 'stack' in the form of charts and graphs. 
 
 It also supports multi-cloud environments, which is an advantage for our project, and provides a single information panel into users' cloud services. It provides views into the logs that are generated, and allows users to generate metrics from those logs as well as allowing users to receive alerts when metrics breach normal levels.
 
@@ -160,7 +160,7 @@ It gives you deep visibility into Kubernetes clusters, with minimal setup. You c
 
 **PROS**
 
-* Quick configuration to start using the platform.
+* Minimal configuration to start using the platform.
 * More than 400 integrations [see here](https://docs.datadoghq.com/integrations/)
 * Excells in troubleshouting complex systems. Can identify bugs with pinpoint accuracy. 
 
@@ -193,5 +193,15 @@ One thing I'd like to mention before starting is that probably the services anal
 In the self-hosted sector, tools like Zabbix or Icinga are great for monitoring, they have a good integration API, both can work with the services that we need to, there are good reviews about them being strong and reliable but, it seems that they are not the best suited to monitor Kubernetes clusters.
 
 In my opinion, this is one of the key points. Monitoring a monolithic infrastructure is not the same as monitoring a microservice one. The chanllenges are different. So the recommended tool will have to work well with microservices and in particullary Kubernetes.
+
+In the SaaS space, looks like all of the tools analysed integrates well with Kubernetes. New Relic and Datadog, possibly among the most well known brands, have Kubernetes monitoring as one of their selling points. Stackdrive, being part of the Google ecosystem can integrate with Kubernetes and SKE quite easily as well. 
+
+Another feature of SaaS products is they are, generally, easier to configure than a self hosted one. Some of them also provide support for installation and configuration. Bringing to the table another argument that wasn't specify in the requiremnts but, I believe, it has weight in the final decision. The capacity and expertice of the team to implement the choosen tool. 
+
+But of course, this ease comes with a price tag. From the top 3 services analyze, Stackdriver is the most economic, and given that we are using GCP (although it also integrates with AWS), it would seem like a good option. 
+
+New Relic and Datadog are a bit more expensive but they offer more features. New Relic's Kubernetes Cluster Explorer seems like a good way of identifying how the cluster is behaving in real time. Datadog dashboard looks good as well and, their system, apparently, can help us identify bugs with pinpoint accuracy, which is great for debugging. But 
+
+
 
 
