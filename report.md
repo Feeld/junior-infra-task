@@ -36,11 +36,11 @@ Works in a pull-based system. It sends a scrape request based on the configurati
 
 The storage is a custom database on the Prometheus server and can handle a massive influx of data. 
 
-Prometheus requires only a scraping endpoint, this way metrics can be pulled from several prometheus instances.
+Prometheus requires only a scraping endpoint, this way metrics can be pulled from several Prometheus instances.
 
 Also pulling its a better way of identifying the health of the service because if the endpoint is not available it's pretty clear the service is not healthy, but if the service doesnt push notifications the reasons might vary and is not as clear its health status. 
 
-If unable to monitor if the container is short lived with the pull endpoint. For that prometheus uses a push gateway notification
+If unable to monitor if the container is short lived with the pull endpoint. For that Prometheus uses a push gateway notification
 
 **PROS**
 
@@ -48,11 +48,11 @@ If unable to monitor if the container is short lived with the pull endpoint. For
 * No extensive set up needed, great community support, low complexity.
 * Monitor of Kubernetes cluster node resources out of the box.
 * Components available as docker images. Can be easily deployed in container environment
-* Integrates with Postgres, Redis, RabbitMQ and MongoDB as well as other [tools](https://prometheus.io/docs/instrumenting/exporters/)
+* Integrates with Postgres, Redis, RabbitMQ and MongoDB as well as other [tools](https://Prometheus.io/docs/instrumenting/exporters/)
 
 **CONS**
 
-* Difficult to scale. Might need several prometheus servers to collect all the metrics if the applications grows after a certain threshold.
+* Difficult to scale. Might need several Prometheus servers to collect all the metrics if the applications grows after a certain threshold.
 * Step learning curve into how to correctly configure it. As learning promQL, the query language needed to query database of metrics to end up creating Grifana dashboards
 * Memory intensive. Can use fair amount of the memory when deployed within the cluster.
 * Own graphical interface is lacking. Need to integrate it with dashboard platform like Grifana.
@@ -81,22 +81,31 @@ It has a pluging to connect it to Kubernetes but doesn't seem its used much. The
 
 ### Zabbix - https://www.zabbix.com/
 
-Zabbix is designed to monitor a large number of network parameters and the health of servers, offering many data visualization and reporting features based on the stored data. Small organizations with a few servers and large enterprises with multiple servers can use Zabbix to monitor IT infrastructure.
+Zabbix is designed to monitor a large number of network parameters and the health of servers, offering many data visualization and reporting features based on the stored data. 
+
+Both large and small organizations can use Zabbix to monitor IT infrastructure. It provides monitoring metrics, among others network utilization, CPU load and disk space consumption.
+
+It's capable of storing the data in an array of services. Visualization features are available as well as very flexible ways of analyzing the data and alerting.
 
 **PROS**
 
-* Enables you to regularly scan the network for external services or Zabbix agents and take pre-defined actions upon discovery.
-* Real-time visualization.
+* High performance and capability. Able to monitor +100.000 devices.
+* Enables you to scan the network for external services and take pre-defined actions upon discovery.
+* Strong API integrations which makes it easy to extend.
+* Real-time visualization and nice grapahs
 
 **CONS**
-* Does not integrate easily with Kubernetes
+* Does not integrate easily with Kubernetes.
+* Support sold separetly.
+* It can get difficult to configure.
+* Not detailed documentation. Difficult for first-timers. 
 
 
 ### Others
 
-Another tools that were taking into account for this report were Grafana, cAdvisor and FluentD but all of them are related to Prometheus in one way or another. 
+Another tools that were taking into account for this Self-Hosted list were Grafana, cAdvisor and FluentD. All of them are related to Prometheus in one way or another. 
 cAdvisor, developed by Google, is a tool to analyze mainly individual containers, so it's missing the monitoring capabilities that we need on pods, nodes and other Kubernetes features.
-Grafana expands the graphic capabilities of Prometheus and usually is used in conjuntion with it. It can read promQL, the quesy language prometheus uses to send data.
+Grafana expands the graphic capabilities of Prometheus and usually is used in conjuntion with it. It can read promQL, the quesy language Prometheus uses to send data.
 Systemd can also integrate with Prometheus monitoring. 
 
 ## SaaS
@@ -131,7 +140,7 @@ Monitor, troubleshoot, and improve application performance on your Google Cloud 
 * Already within the GCP stack.
 * Integrates with GKE
 * It can be integrated with Prometheus.
-* Exported metrics from prometheus can be collected in the back end. 
+* Exported metrics from Prometheus can be collected in the back end. 
 * Paid for storage only.
 
 **CONS**
@@ -144,10 +153,15 @@ Datadog gives you deep visibility into Kubernetes clusters, with minimal setup. 
 
 **PROS**
 
-* Quick configuration
+* Quick configuration to start using the platform.
 * More than 400 integrations [see here](https://docs.datadoghq.com/integrations/)
+* 
 
 **CONS**
+
+* Cosrt $$$$.
+* Lasks deeper application-level insight that New Relic offers.
+
 
 ### Opsgenie - https://www.atlassian.com/software/opsgenie
 
