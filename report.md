@@ -28,6 +28,50 @@ Another factors like budget allocated to the project or the size of the actual c
 
 ## Self-Hosted Solutions
 
+### Icinga - https://icinga.com/
+
+Icinga is a monitoring system which checks the availability of your network resources, notifies users of outages, and generates performance data for reporting.
+
+Scalable and extensible, Icinga can monitor large, complex environments across multiple locations.
+
+It has a pluging to connect it to Kubernetes but doesn't seem its used much. There seems to be another connectors as well but the ecosystem is not extensive developed.
+
+**PROS**
+
+* Provides data and alerts for availability, connectivity, and general health checks of your infrastructure.
+* It's fast. Quick notifications on system issues thanks to its multithreaded design.
+* Uses very similar plugings and add-ons to Nagios.
+* 3rd party integrations with MongoDB, Redis, RabbitMQ (Nagios) and Postgres 
+
+**CONS**
+
+* Might need another tool to monitor Kubernetes cluster.
+* Although it has a focus in community, there is not a huge amount of info available on how to configure it.  
+* Mainly used for static infrastructure.
+
+
+### Zabbix - https://www.zabbix.com/
+
+Zabbix is designed to monitor a large number of network parameters and the health of servers, offering many data visualization and reporting features based on the stored data. 
+
+Both large and small organizations can use Zabbix to monitor IT infrastructure. It provides monitoring metrics, among others network utilization, CPU load and disk space consumption.
+
+It's capable of storing the data in an array of services. Visualization features are available as well as very flexible ways of analyzing the data and alerting.
+
+**PROS**
+
+* High performance and capability. Able to monitor +100.000 devices.
+* Enables you to scan the network for external services and take pre-defined actions upon discovery.
+* Strong API integrations which makes it easy to extend.
+* Real-time visualization and nice grapahs
+
+**CONS**
+
+* Does not integrate easily with Kubernetes.
+* Support sold separetly.
+* It can get difficult to configure.
+* Not detailed documentation. Difficult for first-timers. 
+
 ### Prometheus - https://prometheus.io/
 
 Prometheus is an open source monitoring and alerting toolkit initially built at Soundcloud. In 2016, joined the Cloud Native Computing Fundation as the second hosted project, after Kubernetes.
@@ -56,50 +100,6 @@ If unable to monitor if the container is short lived with the pull endpoint. For
 * Step learning curve into how to correctly configure it. As learning promQL, the query language needed to query database of metrics to end up creating Grifana dashboards
 * Memory intensive. Can use fair amount of the memory when deployed within the cluster.
 * Own graphical interface is lacking. Need to integrate it with dashboard platform like Grifana.
-
-
-### Icinga - https://icinga.com/
-
-Icinga is a monitoring system which checks the availability of your network resources, notifies users of outages, and generates performance data for reporting.
-
-Scalable and extensible, Icinga can monitor large, complex environments across multiple locations.
-
-It has a pluging to connect it to Kubernetes but doesn't seem its used much. There seems to be another connectors as well but the ecosystem is not extensive developed.
-
-
-**PROS**
-* Provides data and alerts for availability, connectivity, and general health checks of your infrastructure.
-* It's fast. Quick notifications on system issues thanks to its multithreaded design.
-* Uses very similar plugings and add-ons to Nagios.
-* 3rd party integrations with MongoDB, Redis, RabbitMQ (Nagios), 
-
-**CONS**
-* Might need another tool to monitor Kubernetes cluster.
-* Although it has a focus in community, there is not a huge amount of info available on how to configure it.  
-* Mainly used for static infrastructure.
-
-
-### Zabbix - https://www.zabbix.com/
-
-Zabbix is designed to monitor a large number of network parameters and the health of servers, offering many data visualization and reporting features based on the stored data. 
-
-Both large and small organizations can use Zabbix to monitor IT infrastructure. It provides monitoring metrics, among others network utilization, CPU load and disk space consumption.
-
-It's capable of storing the data in an array of services. Visualization features are available as well as very flexible ways of analyzing the data and alerting.
-
-**PROS**
-
-* High performance and capability. Able to monitor +100.000 devices.
-* Enables you to scan the network for external services and take pre-defined actions upon discovery.
-* Strong API integrations which makes it easy to extend.
-* Real-time visualization and nice grapahs
-
-**CONS**
-* Does not integrate easily with Kubernetes.
-* Support sold separetly.
-* It can get difficult to configure.
-* Not detailed documentation. Difficult for first-timers. 
-
 
 ### Others
 
@@ -145,8 +145,6 @@ It also supports multi-cloud environments, which is an advantage for our project
 * Log alerts can be set for any string which occurred in logs and get alerts on mail, slack.
 * Ease creation of metrics to understand performance.
 * Good documentation on integration APIs
-* Paid for storage only.
-
 
 **CONS**
 
@@ -184,8 +182,16 @@ OpsGenie provides alert and notification management as a service including on-ca
 **CONS**
 
 * Cost $$$$
-* Not the best option for monitoring, but rather for alarms and notifications.
+* Not the best option for monitoring metrics, but rather for alarms and notifications.
 
 ## Analysis and Recommendation
 
-This report analyzes one of the best tools for monitoring that there are, all of them are good, the aim of this report is to find the best one for our purposes. 
+Based on the facts presented above, what I learn gathering them and the specific requirements for our use case, I will now summarize them and suggest what I believe are the strongest candidates.
+
+One thing I'd like to mention before starting is that probably the services analyze in this report, are within the strongest in the monitoring sector. All of them have great use cases, but we need to find the best for our one. Also, cost, eventhough it wasn't specifically address in the requirements, has played an important role in the final decision. 
+
+In the self-hosted sector, tools like Zabbix or Icinga are great for monitoring, they have a good integration API, both can work with the services that we need to, there are good reviews about them being strong and reliable but, it seems that they are not the best suited to monitor Kubernetes clusters.
+
+In my opinion, this is one of the key points. Monitoring a monolithic infrastructure is not the same as monitoring a microservice one. The chanllenges are different. So the recommended tool will have to work well with microservices and in particullary Kubernetes.
+
+
