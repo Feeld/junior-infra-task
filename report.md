@@ -8,8 +8,6 @@ This explosion of metrics will have to be addressed by the recommended tool in a
 
 The main goal of our monitoring system will be to enable us to make rational decisions based in data, to respond to incidents and to align the service with our business objectives. 
 
-In the microservice world, we need monitoring systems that allow us to alert for high-level services objectives, but retain the granularity to inspect individual components as needed.
-
 ## Self-Hosted or SaaS?
 
 Depending on the requirements of the project one can choose between self-hosted and SaaS monitoring solutions. 
@@ -76,15 +74,12 @@ It's capable of storing the data in an array of services. Visualization features
 
 Prometheus is an open source monitoring and alerting toolkit initially built at Soundcloud. In 2016, joined the Cloud Native Computing Fundation as the second hosted project, after Kubernetes.
 
-Works in a pull-based system. It sends a scrape request based on the configuration defined in the deployment file. The response to this scrape request is stored and parsed in storage along with the metrics for the scrape itself.
+Works in a pull-based system. It sends a scrape request based on the configuration defined in the deployment file. The response to this scrape request is stored and parsed in storage along with the metrics for the scrape itself. This scraping endpoint, allow metrics to be pulled from several Prometheus instances and store it in a custom database on the Prometheus server that can handle a massive influx of data. 
 
-The storage is a custom database on the Prometheus server and can handle a massive influx of data. 
 
-Prometheus requires only a scraping endpoint, this way metrics can be pulled from several Prometheus instances.
+In addition, pulling it's a better way of identifying the health of the service because if the endpoint is not available it's pretty clear the service is not healthy, but if the service doesnt push notifications the reasons might vary and is not as clear its health status. 
 
-Also pulling its a better way of identifying the health of the service because if the endpoint is not available it's pretty clear the service is not healthy, but if the service doesnt push notifications the reasons might vary and is not as clear its health status. 
-
-If unable to monitor if the container is short lived with the pull endpoint. For that Prometheus uses a push gateway notification
+Sometimes, the pull endpoint it's unable to monitor if the container life span is short. For that, Prometheus uses a push gateway notification
 
 **PROS**
 
@@ -196,12 +191,16 @@ In my opinion, this is one of the key points. Monitoring a monolithic infrastruc
 
 In the SaaS space, looks like all of the tools analysed integrates well with Kubernetes. New Relic and Datadog, possibly among the most well known brands, have Kubernetes monitoring as one of their selling points. Stackdrive, being part of the Google ecosystem can integrate with Kubernetes and SKE quite easily as well. 
 
-Another feature of SaaS products is they are, generally, easier to configure than a self hosted one. Some of them also provide support for installation and configuration. Bringing to the table another argument that wasn't specify in the requiremnts but, I believe, it has weight in the final decision. The capacity and expertice of the team to implement the choosen tool. 
+Another feature of SaaS products is they are, generally, easier to configure than a self hosted one. Of course, this ease comes with a price tag. Some of them also provide support for installation and configuration. Bringing to the table another argument that wasn't specify in the requiremnts but, I believe, it has weight in the final decision. The capacity and expertice of the team to implement the choosen tool. 
 
-But of course, this ease comes with a price tag. From the top 3 services analyze, Stackdriver is the most economic, and given that we are using GCP (although it also integrates with AWS), it would seem like a good option. 
+From the top 3 services analyze, Stackdriver is the most economic, and given that we are using GCP (although it also integrates with AWS), it would seem like a good option. New Relic and Datadog are a bit more expensive but they offer more features. New Relic's Kubernetes Cluster Explorer seems like a good way of identifying how the cluster is behaving in real time. Datadog dashboard looks good as well and, their system, apparently, can help us identify bugs with pinpoint accuracy, which is great for debugging. 
 
-New Relic and Datadog are a bit more expensive but they offer more features. New Relic's Kubernetes Cluster Explorer seems like a good way of identifying how the cluster is behaving in real time. Datadog dashboard looks good as well and, their system, apparently, can help us identify bugs with pinpoint accuracy, which is great for debugging. But 
+The last tool I want to mention in this analysis is Prometheus. Open source, part of the CNCF, consider for many as "de facto approach for monitoring Kubernetes", it has great and supportive community behind it, loads of tutorials online on how to configure it, it's reliable, stable, can integrate with a great number of services, like all of the SaaS services we disscussed above so they could work in conjuntion, it uses a pull approach of collecting metrics, which is consider a more reliable way that pushing metrics, it can get up and running quickly, it can keep working when part of the system is down... And the list goes on.
 
+Of course, not everytrhing about it is good abouit it. It can get difficult to scale if the infrastructure gets too big, there is a step learning curve to configure it exactly as you wish, it can use a lot of cluster memory if deployed within it, the graphical interface is lacking functionality and so on, but the upsides overtake the downsides.
 
+To conclude, after taken into consideration all of the facts and opinions expressed above, the analysis of the different tools, their pros and cons, I believe the best tool for our use case it's Prometheus. Not only is open source, but the support from the community and its active users can help us set get it up and running. I was able to do it following instructions in a git repo, not that I belive it would be as easy in a real world project but still. 
 
+In addition, most of the items in the list of downsides can be fixed, like the graphical interface with Grafana or the scaling of the service by dividing it into several servers. Maybe it's a bit complicated at the begining but I'm up for the challenge.
 
+In the microservice world, we need monitoring systems that allow us to alert for high-level services objectives, but retain the granularity to inspect individual components as needed and I belive Prometheus is the one that can achive this better for us.
