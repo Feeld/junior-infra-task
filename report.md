@@ -50,11 +50,18 @@
 
 **Pros**
 
-- 
+- Plenty of information available, good community
+- Clear documentation
+- Highly performant
+- Integrates well with all the listed system requirements
+- Has plenty of other integrations which allows for flexibility
 
 **Cons**
 
-- 
+- Good data visualisation does not come out of the box - requires Grafana integration
+- Uses PromQL, which is another thing to learn
+- No support for log management
+- Pull system requires secure network configuration 
 
 ### Sentry
 
