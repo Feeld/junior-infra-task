@@ -50,8 +50,7 @@
 
 **Pros**
 
-- Plenty of information available, good community
-- Clear documentation
+- Plenty of clear documentation available, good community
 - Highly performant
 - Integrates well with all the listed system requirements
 - Has plenty of other integrations which allows for flexibility
@@ -77,15 +76,6 @@
 - Steep learning curve
 - Does not offer many out of the box integrations for the requirements above
 
-### Elastic Cloud on Kubernetes
-
-**Pros**
-
--
-
-**Cons**
-
--
 
 ## SaaS
 
@@ -93,11 +83,15 @@
 
 **Pros**
 
--
+- Native support for all system requirements
+- As with Prometheus, there are lots of other native integrations
+- Granular metrics
+- Good data visualisation options
 
 **Cons**
 
--
+- Lots of options can be overwhelming
+- Can get expensive with limited free options
 
 ### Google Cloud Stackdriver
 
