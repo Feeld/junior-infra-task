@@ -7,4 +7,4 @@ Zabbix also uses a flexible notification mechanism that allows users to configur
 
 Zabbix utilises a web-based API that helps users to create new applications, automate tasks and integrate with third-party software.
 
-Although not being native it does integrate with Kubernetes using 3 different solutions; a Docker Template, a Nagios/Icinga/Zabbix style plugin for checking Kubernetes and a option to provide a custom database container.
+Although not being native it does integrate with Kubernetes using 3 different solutions; a Docker Template, a Nagios/Icinga/Zabbix style plugin for checking Kubernetes and a option to provide a custom database container. There is also integration with Google Cloud Platform using its Stackdriver monitoring service as well as Redis, RabbitMQ and Postgres monitoring are all supported by Zabbix via templates while MongoDB requires one of several third-party template plugins.
