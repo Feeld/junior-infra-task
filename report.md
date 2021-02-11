@@ -93,15 +93,21 @@
 - Lots of options can be overwhelming
 - Can get expensive with limited free options
 
-### Google Cloud Stackdriver
+### Google Cloud Stackdriver (now Google Cloud Operations Suite)
 
 **Pros**
 
--
+- Native support for GCP, GKE, Redis
+- Real-time log analysis
+- Scalable and fully managed
+- Hybrid and multi-cloud support
 
 **Cons**
 
--
+- Requires Blue Medora integration for PostgreSQL, MongoDB and RabbitMQ support
+- Search can be slow, particularly old logs
+- Unless configured differently, logs are unavailable after 30 days by default
+- Pricing can be hard to estimate
 
 ### OpsGenie
 
