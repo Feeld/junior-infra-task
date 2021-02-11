@@ -16,3 +16,12 @@ Incing’s RESTful API allows integration with Google Cloud Platform via HashiCo
 * Configuration is based on common props
 * Large community support and plugin library
 * Supports distributed monitoring.
+
+### Con’s
+
+* Configuration can be confusing and difficult to set up and deploy
+* Difficult to integrate into modern management systems , no native support as such
+* Maybe relies too much on third party plugins
+* is a fork of Nagios and therefore some feel, too outdated
+* no simple way to add new hosts and services through the web UI
+* Inability to copy and paste has been reported therefore wasting time retyping
