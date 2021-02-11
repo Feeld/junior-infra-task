@@ -125,8 +125,15 @@
 
 **Pros**
 
--
+- Integrates with all the system requirements
+- Great flexibility and extensibility
+- Active community support
+- Fast and powerful 
+- Log management
+- Good data visualisation
 
 **Cons**
 
--
+- Heavy customisation may be overwhelming
+- Steep learning curve
+- Documentation isn't always great
