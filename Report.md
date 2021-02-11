@@ -71,6 +71,7 @@ Although not being native it does integrate with Kubernetes using 3 different so
 * Hard for newbies to configure, support tickets and courses can be expensive
 * Version migration could have been smoother in the past
 * Doesn't support all file format’s
+* Scores pretty low (7.7 out of 10) on https://www.trustradius.com/
 
 * **Requirements** https://github.com/AmyLouise85/junior-infra-task/blob/main/Requirements.md
 * **A list of websites used in compiling this report can be found at** https://github.com/AmyLouise85/junior-infra-task/blob/main/Research.md
