@@ -23,4 +23,10 @@ Websites/ URL's used for referencing within this report
 * https://www.reddit.com/r/zabbix/
 * https://www.zabbix.com/integrations/kubernetes
 * https://www.capterra.com/network-monitoring-software/compare/170983-135902/Google-Cloud-Platform-vs-Zabbix-Monitoring-Solution
+* https://www.zabbix.com/integrations/redis
+* https://www.zabbix.com/integrations/rabbitmq
+* https://www.zabbix.com/integrations/postgresql
+* https://www.zabbix.com/integrations/mongodb
+* https://catalog.redhat.com/software/operators/detail/5e98728c2989e6a90307acda
+
 
