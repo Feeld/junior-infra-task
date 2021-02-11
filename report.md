@@ -1,4 +1,3 @@
-
 ## Considerations
 
 ### Systems
