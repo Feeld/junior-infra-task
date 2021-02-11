@@ -13,8 +13,8 @@
 
 ### Self-hosted vs SaaS
 
-- Self-hosting carries a relatively bigger time cost but allows for greater control over the monitoring system
-- SaaS carries a higher financial cost but significantly reduces the time required for setup
+- Self-hosting carries a relatively bigger time cost but is free/open-source and allows for more granular control over the monitoring system
+- SaaS carries a financial cost but significantly reduces the time required for setup
 
 
 ## Self-hosted
@@ -63,15 +63,19 @@
 - No support for log management
 - Pull system requires secure network configuration 
 
-### Sentry
+### Nagios
 
 **Pros**
 
--
+- Offers PostgreSQL support natively but not much else, in terms of the requirements above
+- Flexibile
+- Log managemnent
+- Lots of community plugins
 
 **Cons**
 
--
+- Steep learning curve
+- Does not offer many out of the box integrations for the requirements above
 
 ### Elastic Cloud on Kubernetes
 
