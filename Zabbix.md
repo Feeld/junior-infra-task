@@ -7,4 +7,4 @@ Zabbix also uses a flexible notification mechanism that allows users to configur
 
 Zabbix utilises a web-based API that helps users to create new applications, automate tasks and integrate with third-party software.
 
-It intergrates with Kubernetes 
+Although not being native it does integrate with Kubernetes using 3 different solutions; a Docker Template, a Nagios/Icinga/Zabbix style plugin for checking Kubernetes and a option to provide a custom database container.
