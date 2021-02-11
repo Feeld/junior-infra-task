@@ -1,4 +1,4 @@
-## Checks
+# Checks
 
 ### HTTP API
 
@@ -11,7 +11,7 @@
 
 - Number of sequential scans on a table
 - Number of index scans on a table
-- Rows fetched vs. returned by queries to the database
+- Rows fetched vs returned by queries to the database
 - Rows inserted, updated, deleted by queries (per table or per database)
 - Replication delay
 - Number of active connections

@@ -1,6 +1,6 @@
-## Considerations
+# Report
 
-### Systems
+## Considerations
 
 - Kubernetes
 - Containerisation
@@ -9,11 +9,6 @@
 - Redis
 - RabbitMQ
 - MongoDB
-
-### Self-hosted vs SaaS
-
-- Self-hosting carries a relatively bigger time cost but is free/open-source and allows for more granular control over the monitoring system
-- SaaS carries a financial cost but significantly reduces the time required for setup
 
 
 ## Self-hosted
@@ -140,11 +135,11 @@
 
 ## Conclusion
 
-From each category, I would pick Prometheus and Datadog for their flexibility, community support and excellent choice of integrations. Both options fully satisfy the system requirements. For the purposes of picking one option, my reasoning would depend on many other things such as team size, budget, business need and so on.
+From each category, I would recommend Prometheus and Datadog for their flexibility, community support and excellent choice of integrations. Both options fully satisfy the system requirements. For the purposes of picking one option, my reasoning would depend on many other things such as team size, budget, business need and so on.
 
-Using Feeld as an example, I would pick Datadog as I imagine the configuration and maintenance of a self-hosted option could be cumbersome for a small and busy platforming team. Datadog would be responsible for patching and upgrading their services, something which may incur both time and financial costs if a self-hosted tool is used. The myriad of integration options helps avoid vendor lock-in and allows for customisation, which I think is good for a growing business that may require a change in technology.
+Using Feeld as an example, I would pick Datadog as the configuration and maintenance of a self-hosted option could be cumbersome for a small and busy platforming team. Datadog would be responsible for patching and upgrading their services, something which may incur both time and financial costs if a self-hosted tool is used. The myriad of integration options helps avoid vendor lock-in and allows for customisation, which is good for a growing business that may require a change in technology.
 
-As Feeld is fully remote, I think being able to access Datadog on any device could be a good feature to have, as of course, infrastructure management sometimes presents problems out of regular working hours.
+As Feeld is fully remote, being able to access Datadog on any device could be a good feature to have, as of course, infrastructure management sometimes presents problems out of regular working hours.
 
-One notable downside with using a SaaS option is that given the sensitive data that Feeld manages, lack of control over security measures may present issues.
+One notable downside with using a SaaS option is that given the sensitive data that Feeld manages, lack of control over security measures may present issues. I also acknowledge that SaaS tools come with a financial cost, as opposed to the free/open-source nature of self-hosted options, but I believe the pros outweigh the cons.
 
