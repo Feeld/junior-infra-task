@@ -9,10 +9,10 @@ Incing’s RESTful API allows integration with Google Cloud Platform via HashiCo
 ### Pro’s
 
 * Can send notifications in a variety of different (possible more helpful) ways, (Text message and Slack being two of my favourite methods)
-Scores highly (9.9 out of 10) on https://www.trustradius.com/
+* Scores highly (9.9 out of 10) on https://www.trustradius.com/
 * Easy to read dashboard
 * Easily scalable
-* Flexable ( all monitoring is done by scripts so as log as you can wtite it it, you can mitor it)
+* Flexible (monitoring is done by scripts so as long as you can write it, you can monitor it)
 * Configuration is based on common props
 * Large community support and plugin library
 * Supports distributed monitoring.
