@@ -12,3 +12,4 @@ Websites/ URL's used for referencing within this report
 * https://monitoring-portal.org/woltlab/index.php?thread/41638-icinga-2-metrics/
 * https://nagios-plugins.org/doc/guidelines.html
 * https://icinga.com/blog/2018/08/14/icinga-joins-hashicorp-technology-partner-program/
+* https://stackoverflow.com/questions/54179441/icinga-notification-in-slack-containing-url
