@@ -16,4 +16,9 @@ Websites/ URL's used for referencing within this report
 *  https://www.trustradius.com/products/icinga/reviews#:~:text=a%20year%20ago.-,Pros%20and%20Cons,thousands%20of%20checks%20per%20server.
 
 ### Zabbix
-* https://www.zabbix.com/
+* https://www.zabbix.com/users
+* https://hub.docker.com/r/zabbix/zabbix-agent
+* https://github.com/zabbix/zabbix
+* https://searchitoperations.techtarget.com/definition/Zabbix
+* https://www.reddit.com/r/zabbix/
+
