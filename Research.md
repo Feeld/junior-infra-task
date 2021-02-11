@@ -21,4 +21,5 @@ Websites/ URL's used for referencing within this report
 * https://github.com/zabbix/zabbix
 * https://searchitoperations.techtarget.com/definition/Zabbix
 * https://www.reddit.com/r/zabbix/
+* https://www.zabbix.com/integrations/kubernetes
 
