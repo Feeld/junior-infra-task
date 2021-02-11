@@ -113,11 +113,13 @@
 
 **Pros**
 
--
+- Handles alert managaement well
+- Offers on-call scheduling
+- Provides performance analytics
 
 **Cons**
 
--
+- Does not seem well suited to our use case – it is an escalation management and notification system
 
 ### Datadog
 
