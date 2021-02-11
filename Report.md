@@ -16,5 +16,7 @@ As part of of this I will be contrasting and comparing:
 
 Things I will be taking into consideration will be ease of use, strengths, maintainability, weaknesses's, cost, realiability and genrally looking into the option as being fit for the buisnnes's purpose.
 
+
+
 * **Requirements** https://github.com/AmyLouise85/junior-infra-task/blob/main/Requirements.md
 * **A list of websites used in compiling this report can be found at** https://github.com/AmyLouise85/junior-infra-task/blob/main/Research.md
