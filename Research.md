@@ -22,4 +22,5 @@ Websites/ URL's used for referencing within this report
 * https://searchitoperations.techtarget.com/definition/Zabbix
 * https://www.reddit.com/r/zabbix/
 * https://www.zabbix.com/integrations/kubernetes
+* https://www.capterra.com/network-monitoring-software/compare/170983-135902/Google-Cloud-Platform-vs-Zabbix-Monitoring-Solution
 
