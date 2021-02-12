@@ -18,7 +18,7 @@ Things I will be taking into consideration will be ease of use, strengths, maint
 
 # Icinga   
 
-Icinga is a free open-source network tool used by the likes of Adobe, Audi, T mobile and Siemens that claims to be flexible, efficient, scalable and provides automated monitoring of a business’s network resources. 
+Icinga is a self-hosted, free open-source network tool used by the likes of Adobe, Audi, T mobile and Siemens that claims to be flexible, efficient, scalable and provides automated monitoring of a business’s network resources. 
 
 It checks these and generates notifications of outages, surges and general performance metrics visually via dashboards with the ability to be filtered for reporting and monitoring purposes. Scalable and with the ability to stretch indefinitely, Icinga can monitor large, complex environments across multiple locations.
 
@@ -47,7 +47,7 @@ Incing’s RESTful API allows integration with Google Cloud Platform via HashiCo
 
 # Zabbix
 
-Zabbix is a free open source software tool that combines a real-time monitoring of IT components and services, such as networks, servers, VMs, applications and the cloud with a breadth of 22 years’ experience and is used by companies such as T-Mobile, BodyBuilding.com, Dell and BookingLive.
+Zabbix is a self-hosted, free open source software tool that combines a real-time monitoring of IT components and services, such as networks, servers, VMs, applications and the cloud with a breadth of 22 years’ experience and is used by companies such as T-Mobile, BodyBuilding.com, Dell and BookingLive.
 
 It provides the user with monitoring metrics and logs, such as network utilization, CPU load and disk space consumption and displays them within a graphical user interface (GUI) that contains fully customisable dashboards based on widgets, graphs, network maps, slideshows and reports.
 Zabbix also uses a flexible notification mechanism that allows users to configure e-mail-based alerts.
@@ -75,7 +75,7 @@ Although not being native it does integrate with Kubernetes using 3 different so
 
 # Prometheus 
 
-Prometheus is a free open-source monitoring software that utilises autonomous single server nodes, trusted by Boxever, Docker, KuberMatic and SoundCloud.
+Prometheus is a self-hosted, free open-source monitoring software that utilises autonomous single server nodes, trusted by Boxever, Docker, KuberMatic and SoundCloud.
 
 Looks to have exceptional native integration with its Cloud Native Computing Foundation partner Kubernetes as it appears to be the only software actively championed by them. It can also be easily integrated with Google Cloud Platform but Redis, RabbitMQ Postgres and MongoDB need to be monitored with third parties.
 
@@ -96,6 +96,11 @@ Each Prometheus server is standalone, not depending on network storage or other 
 * collected data will likely not be detailed and complete enough for 100% accuracy
 * official support has been reported as lacking
 * only alerts on critical responses such as production issues, incident response, post- mortem analysis, and metrics (good tho?)
+
+# New Relic
+
+New Relic One is an SaaS cloud based, chargeable observability platform that claims to help businesses analyse, troubleshoot, and optimize their entire software stack.
+
 
 * **Requirements** https://github.com/AmyLouise85/junior-infra-task/blob/main/Requirements.md
 * **A list of websites used in compiling this report can be found at** https://github.com/AmyLouise85/junior-infra-task/blob/main/Research.md
