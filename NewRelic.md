@@ -11,6 +11,7 @@ Trusted by companies such as MasterCard and Spotify it integrates natively with 
 * Natively integrates with our stack
 * Works across web and mobile
 * Works across Cloud and Hybrid environments
+* Scored highly (8.1 out of 10) on https://www.trustradius.com/
 
 ### Cons
 * Only free up to a certain point, could get costly and would need further BA input
