@@ -44,3 +44,7 @@ Websites/ URL's used for referencing within this report
 * https://www.trustradius.com/products/new-relic/reviews
 * https://newrelic.com/
 * https://en.wikipedia.org/wiki/New_Relic
+* https://newrelic.com/pricing
+* https://newrelic.com/solutions/partners
+* https://discuss.newrelic.com/
+
