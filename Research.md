@@ -38,4 +38,9 @@ Websites/ URL's used for referencing within this report
 * https://prometheus.io/docs/instrumenting/exporters/
 * https://en.wikipedia.org/wiki/Cloud_Native_Computing_Foundation
 * https://opsani.com/blog/what-is-kubernetes/
+* https://prometheus.io/docs/introduction/overview/
+
+###  New Relic
+* https://www.trustradius.com/products/new-relic/reviews
+
 
