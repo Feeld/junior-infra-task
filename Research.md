@@ -59,3 +59,15 @@ Websites/ URL's used for referencing within this report
 * https://cloud.google.com/logging/
 * https://bluemedora.com/integration/mongodb-in-google-stackdriver/
 
+### OpsGenie
+* https://www.atlassian.com/software/opsgenie/what-is-opsgenie
+* https://twitter.com/Opsgenie?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor
+* https://docs.opsgenie.com/docs/welcome
+* https://play.google.com/store/apps/details?id=com.ifountain.opsgenie&hl=en&gl=US
+* https://tray.io/connectors/opsgenie-rabbitmq-integrations
+* https://www.integromat.com/en/integrations/opsgenie/rabbitmq
+* https://tray.io/connectors/postgresql-opsgenie-integrations
+* https://docs.opsgenie.com/docs/mongodb-cloud-manager-integration
+* https://docs.opsgenie.com/docs/stackdriver-integration
+* https://www.trustradius.com/products/opsgenie/reviews
+
