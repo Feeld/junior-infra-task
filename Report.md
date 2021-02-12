@@ -116,6 +116,25 @@ Trusted by companies such as MasterCard and Spotify it integrates natively with 
 ### Cons
 * Only free up to a certain point, could get costly and would need further BA input
 
+# Google Cloud Stackdriver
+
+I Don’t think Google really needs much introduction (!) but it’s safe to say this SaaS cloud management system is used and trusted by some of the biggest companies in the world. Stackdriver is free up to a certain point and claims to be designed to keep apps running fast, error free and available in the Cloud.
+
+Monitors and alerts metrics from GCP such as Cloud logging, error reporting, trace and production debugger, diagnostic and performance data and displays them in graphs and charts for ease of use. 
+
+Nativity integrates with other member of the ‘Google family’ such as Google Kubernetes Engine but integration with Postgres, MongoDB or Rabbit MQ doesn’t look like it has much support and is almost advised against instead using BlueMedora to BindPlane our stack to Stackdriver.
+
+Boasts a world-class reliability and scalability as the service is migrated to the same infrastructure that powers the rest of Google.
+
+### Pros
+* Uses Slack for notifications
+* Brandname
+* Huge community support and excellent documentation/ you tube
+
+### Cons
+* Cost
+* Intergration with our stack
+
 
 * **Requirements** https://github.com/AmyLouise85/junior-infra-task/blob/main/Requirements.md
 * **A list of websites used in compiling this report can be found at** https://github.com/AmyLouise85/junior-infra-task/blob/main/Research.md
