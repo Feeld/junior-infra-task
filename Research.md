@@ -48,3 +48,9 @@ Websites/ URL's used for referencing within this report
 * https://newrelic.com/solutions/partners
 * https://discuss.newrelic.com/
 
+### Google Cloud Stackdriver  
+* https://en.wikipedia.org/wiki/Stackdriver
+* https://cloud.google.com/products/operations
+* https://cloud.google.com/stackdriver/docs
+* https://cloud.google.com/blog/products/gcp/google-stackdriver-generally-available
+
