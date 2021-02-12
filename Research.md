@@ -30,4 +30,11 @@ Websites/ URL's used for referencing within this report
 * https://catalog.redhat.com/software/operators/detail/5e98728c2989e6a90307acda
 * https://www.trustradius.com/products/zabbix/reviews
 
+### Prometheus
+* https://opsani.com/blog/why-is-prometheus-monitoring-the-industry-standard/
+* https://prometheus.io/
+* https://opensource.com/article/19/11/introduction-monitoring-prometheus
+* https://prometheus.io/docs/instrumenting/exporters/
+* https://en.wikipedia.org/wiki/Cloud_Native_Computing_Foundation
+* https://opsani.com/blog/what-is-kubernetes/
 
