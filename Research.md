@@ -53,4 +53,9 @@ Websites/ URL's used for referencing within this report
 * https://cloud.google.com/products/operations
 * https://cloud.google.com/stackdriver/docs
 * https://cloud.google.com/blog/products/gcp/google-stackdriver-generally-available
+* https://searchcloudcomputing.techtarget.com/definition/Google-Stackdriver
+* https://severalnines.com/database-blog/cloud-vendor-deep-dive-postgresql-google-cloud-platform-gcp
+* https://bluemedora.com/integration/rabbitmq-in-google-stackdriver/
+* https://cloud.google.com/logging/
+* https://bluemedora.com/integration/mongodb-in-google-stackdriver/
 
