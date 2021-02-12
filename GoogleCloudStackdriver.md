@@ -7,3 +7,12 @@ Monitors and alerts metrics from GCP such as Cloud logging, error reporting, tra
 Nativity integrates with other member of the ‘Google family’ such as Google Kubernetes Engine but integration with Postgres, MongoDB or Rabbit MQ doesn’t look like it has much support and is almost advised against instead using BlueMedora to BindPlane our stack to Stackdriver.
 
 Boasts a world-class reliability and scalability as the service is migrated to the same infrastructure that powers the rest of Google.
+
+### Pros
+* Uses Slack for notifications
+* Brandname
+* Huge community support and excellent documentation/ you tube
+
+### Cons
+* Cost
+* Intergration with our stack
